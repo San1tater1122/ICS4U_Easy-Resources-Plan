@@ -3,5 +3,19 @@
 <h3 align="center"> Created by: San1tater1122 and MicroNeutron </h3>
 
 ## Project Selection: Supermarket Inventory
-* Easy Resources Plan is a program about supermarket inventory management. It can be used as a system to record and manage supermarket product information.
+* Easy Resources Plan is a script based program about supermarket inventory management. It can be used as a system to record and manage supermarket product information.
 ## Features inclueded: 
+* Product Management
+  * Add, delete, and modify product information (such as id, name, price, category, suppliers.).
+* Inventory Management
+  * Inbound inventory management: Increase inventory levels.
+  * Outbound inventory management: Reduce inventory levels.
+  * Return/damage handling: Adjust inventory for expired, damaged, or customer-returned items.
+  * Inventory counting: Supports inventory verification and statistics.
+* Query and Reporting
+  * Product information query (by number, name, or category).
+  * Inventory alerts (remind you to restock when stock falls below the safety level).
+  * Generate inventory and sales reports to assist with supermarket operations analysis.
+* User Permissions
+  * Administrator: Full access to product and inventory.
+  * Employee: Limited to recording sales and querying inventory.
