@@ -26,12 +26,14 @@ Log content should be concise and clear for easy understanding.
 - 开发者: GitHub用户名
 - 功能描述: 简要描述做了什么
 - 涉及文件: filename1.java, filename2.md
+- 完成状态: (已完成, 进行中, 计划中)
 - 备注: （可选）遇到的问题、解决方法或后续工作
 ---
 ### [Date] Feature/Change Title
 - Developer: GitHub Username
 - Feature Description: Briefly describe what was done
 - Affected Files: filename1.java, filename2.md
+- Completion status: (completed, in progress, planned)
 - Notes: (Optional) Issues encountered, solutions, or follow-up work
 ---
 
