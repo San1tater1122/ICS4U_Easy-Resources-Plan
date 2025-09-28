@@ -1,5 +1,7 @@
 package service;
 
+// Responsible by San1tater
+
 import java.util.Scanner;
 
 public class InputTest {
