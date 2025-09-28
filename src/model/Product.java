@@ -1,5 +1,7 @@
 package model;
 
+// Responsible by San1tater
+
 public class Product {
     private short id;
     private String ProductName;
@@ -17,9 +19,11 @@ public class Product {
         this.stock = 0;
     }
 
+    // the port to increase or decrease the number of stock
     public void increaseStock(int input){this.stock += input;}
     public void decreaseStock(int input){this.stock -= input;}
 
+    // all the method to get the information of this product
     public short getID(){return id;}
     public String getProductName(){return ProductName;}
     public int getProductPrice(){return ProductPrice;}
@@ -27,6 +31,7 @@ public class Product {
     public String getProductSupplier(){return ProductSupplier;}
     public int getStock(){return stock;}
 
+    // all the method to reset the information for this product
     public short resetID(short ID){return this.id = ID;}
     public String resetProductName(String PN){return this.ProductName = PN;}
     public int resetProductPrice(int PP){return this.ProductPrice = PP;}
@@ -34,6 +39,7 @@ public class Product {
     public String resetProductSupplier(String PS){return this.ProductSupplier = PS;}
     public int resetStock(int newStock){return  this.stock = newStock;}
 
+    // the method made previously to change to CSV file format.
     public String toCSV(){
         return id + "," + ProductName + "," + ProductPrice + "," + ProductCategory + "," + ProductSupplier;
     }
