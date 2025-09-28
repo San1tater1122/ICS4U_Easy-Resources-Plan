@@ -1,4 +1,4 @@
-# Development Log
+# San1tater's Development Log
 
 ## Sep 27, 2025
 &emsp;[Completed, Tested] Help功能 (Help function completed)  
