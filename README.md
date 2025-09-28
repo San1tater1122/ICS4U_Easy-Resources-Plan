@@ -4,7 +4,7 @@
 
 ---
 #### San1tater1122‘s Development Log: https://github.com/San1tater1122/ICS4U_Easy-Resources-Plan/blob/main/San1tater_Development_Log.md  
-#### MicroNeutron’s Development Log: [Not created yet]  
+#### MicroNeutron’s Development Log: https://github.com/San1tater1122/ICS4U_Easy-Resources-Plan/blob/main/MicroNeutron_Development_Log.md
 ---
 
 ## Project Selection: Supermarket Inventory
