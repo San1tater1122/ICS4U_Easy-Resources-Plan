@@ -46,5 +46,10 @@
 * 备注: 无。
 ---
 
+### [Sep 29, 2025] 增添用户类及其子类 (User Class and its son class)
+* 功能描述: User作为父类让 Admin 与 Employee 子类继承.
+* 涉及文件: model/User.java, model/Admin.java, model/Employee.java
+* 完成状态: 已完成|未测试
+* 备注: 以后检测权限可以直接使用 instanceof 来检测用户是否拥有 Admin 权限.
 
 
