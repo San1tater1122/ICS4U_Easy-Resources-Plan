@@ -11,11 +11,15 @@ public class User {
     protected short userID;
     protected String email;
     protected String password;
+    protected String userName;
+    protected String Role;
 
-    public User(short userID, String email, String password){
+    public User(short userID, String email, String password, String userName, String Role){
         this.userID = userID;
         this.email = email;
         this.password = password;
+        this.userName = userName;
+        this.Role = Role;
     }
 
     public short getUserID(){return userID;}
