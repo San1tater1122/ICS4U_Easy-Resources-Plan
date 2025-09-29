@@ -15,7 +15,7 @@ All logs must begin with month day, year.
 格式为如下: (The format is as follows:)   
 <img width="291" height="110" alt="截屏2025-09-28 15 51 51" src="https://github.com/user-attachments/assets/b2f1e386-f39c-4fb7-a374-fe39fe435e9a" />  
 // Responsible by XXX  
-## 📝日志格式 (Log format)
+## 📝贡献者日志格式 (Contributors Log format)
 日志必须用此格式，保持一致的排版。  
 日志内容要简洁清晰，方便他人理解。  
 Logs must be formatted in Markdown and maintain consistent formatting.  
@@ -35,5 +35,7 @@ Log content should be concise and clear for easy understanding.
 - Notes: (Optional) Issues encountered, solutions, or follow-up work
 ---
 
-
-
+## 🆘需求日志 (Requirement-Log)
+详细请看需求日志开头
+Please see the beginning of the demand log for details
+#### [链接直达] (https://github.com/San1tater1122/ICS4U_Easy-Resources-Plan/blob/main/%E5%BC%80%E5%8F%91%E8%80%85%E6%97%A5%E5%BF%97(Developer%20log)/Requirements-Log.md)
