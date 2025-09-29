@@ -38,4 +38,4 @@ Log content should be concise and clear for easy understanding.
 ## 🆘需求日志 (Requirement-Log)
 详细请看需求日志开头
 Please see the beginning of the demand log for details
-#### [链接直达] (https://github.com/San1tater1122/ICS4U_Easy-Resources-Plan/blob/main/%E5%BC%80%E5%8F%91%E8%80%85%E6%97%A5%E5%BF%97(Developer%20log)/Requirements-Log.md)
+#### [链接直达](https://github.com/San1tater1122/ICS4U_Easy-Resources-Plan/blob/main/%E5%BC%80%E5%8F%91%E8%80%85%E6%97%A5%E5%BF%97(Developer%20log)/Requirements-Log.md)
