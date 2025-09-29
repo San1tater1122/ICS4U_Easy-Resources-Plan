@@ -1,5 +1,7 @@
 package model;
 
+// Responsible by San1tater
+
 public class User {
     // Who can access?
     // public:                Same class, same package, subclass, other package
