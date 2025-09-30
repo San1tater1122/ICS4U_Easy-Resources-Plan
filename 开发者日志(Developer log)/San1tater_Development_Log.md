@@ -8,55 +8,53 @@
 * 备注:(可选)遇到的问题、解决方法或后续工作.
 
 ---
-### [Sep 27, 2025] 增添Help功能 (Help function added)  
-* 功能描述: /help指令触发后的功能, 显示所有指令
-* 涉及文件: service/Help.java
-* 完成状态: 已完成|已测试
-* 备注: 如果有新指令加入记得加入到指令表中
-
----
-### [Sep 28, 2025] 增添商品类 (Product category Class added)  
-* 功能描述: 创建好商品类别, 可以直接引用创建
-* 涉及文件: model/Product.java
-* 完成状态: 已完成|已测试
-* 备注: 无。 
-
-### [Sep 28, 2025] 增添添加商品信息功能 (Add product information added)  
-* 功能描述: 添加商品信息功能入口与功能
-* 涉及文件: service/ProductList.java
-* 完成状态: 已完成|已测试
-* 备注: 无。 
-
-### [Sep 28, 2025] 增添添加商品存货功能 (Add product inventory added)  
-* 功能描述: 添加商品存货功能入口与功能
-* 涉及文件: service/ProductList.java
-* 完成状态: 已完成|未测试
-* 备注: 无。
-
-### [Sep 28, 2025] 增添减少商品存货功能 (Reduce product inventory added) 
-* 功能描述: 减少商品存货功能入口与功能
-* 涉及文件: service/ProductList.java
-* 完成状态: 已完成|未测试
-* 备注: 无。
-
-### [Sep 28, 2025] 增添整数输入测试功能 (Integer input test added)  
-* 功能描述: 整数输入测试功能入口与功能
-* 涉及文件: service/InputTest.java
-* 完成状态: 已完成|已测试
-* 备注: 无。
----
-
-### [Sep 29, 2025] 增添用户类及其子类 (User Class and its son class added)
-* 功能描述: User作为父类让 Admin 与 Employee 子类继承.
-* 涉及文件: model/User.java, model/Admin.java, model/Employee.java
-* 完成状态: 已完成|未测试
-* 备注: 以后检测权限可以直接使用 instanceof 来检测用户是否拥有 Admin 权限.
-
+### [Sep 29, 2025] 开发了用户信息存储文件 (Developed user information storage files)
+* 功能描述: 从properties文件中读取文件并储存在一个list中, 还有添加新用户功能(自动储存到properties文件中)
+* 涉及文件: data/users.properties, src/service/AddNewUserToProperties, src/service/UserPropertiesFileParsing
+* 完成状态: 已完成|以测试
+* 备注: properties还是太权威了
 ### [Sep 29, 2025] 删减用户子类; 只保留User父类 (Delete the User subclass; only keep the User parent class) 
 * 功能描述: User类增加String值 “Role”用来填写职位, 以此判定权限
 * 删除文件: (delete) model/Admin.java, model/Employee.java;
 * 涉及文件: model/User.java
 * 完成状态: 已完成|未测试
 * 备注: 这个操作是为了以后写json文件.
+### [Sep 29, 2025] 增添用户类及其子类 (User Class and its son class added)
+* 功能描述: User作为父类让 Admin 与 Employee 子类继承.
+* 涉及文件: model/User.java, model/Admin.java, model/Employee.java
+* 完成状态: 已完成|未测试
+* 备注: 以后检测权限可以直接使用 instanceof 来检测用户是否拥有 Admin 权限.
 
+---
+### [Sep 28, 2025] 增添整数输入测试功能 (Integer input test added)  
+* 功能描述: 整数输入测试功能入口与功能
+* 涉及文件: service/InputTest.java
+* 完成状态: 已完成|已测试
+* 备注: 无。
+### [Sep 28, 2025] 增添减少商品存货功能 (Reduce product inventory added) 
+* 功能描述: 减少商品存货功能入口与功能
+* 涉及文件: service/ProductList.java
+* 完成状态: 已完成|未测试
+* 备注: 无。
+### [Sep 28, 2025] 增添添加商品存货功能 (Add product inventory added)  
+* 功能描述: 添加商品存货功能入口与功能
+* 涉及文件: service/ProductList.java
+* 完成状态: 已完成|未测试
+* 备注: 无。
+### [Sep 28, 2025] 增添添加商品信息功能 (Add product information added)  
+* 功能描述: 添加商品信息功能入口与功能
+* 涉及文件: service/ProductList.java
+* 完成状态: 已完成|已测试
+* 备注: 无。
+### [Sep 28, 2025] 增添商品类 (Product category Class added)  
+* 功能描述: 创建好商品类别, 可以直接引用创建
+* 涉及文件: model/Product.java
+* 完成状态: 已完成|已测试
+* 备注: 无。 
 
+---
+### [Sep 27, 2025] 增添Help功能 (Help function added)  
+* 功能描述: /help指令触发后的功能, 显示所有指令
+* 涉及文件: service/Help.java
+* 完成状态: 已完成|已测试
+* 备注: 如果有新指令加入记得加入到指令表中
