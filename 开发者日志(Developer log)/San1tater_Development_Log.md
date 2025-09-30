@@ -8,6 +8,11 @@
 * 备注:(可选)遇到的问题、解决方法或后续工作.
 
 ---
+### [Sep 30, 2025] 优化Help功能 (Optimize Help Function)
+* 功能描述: 将Colour.java的功能加入到help中, 使得显示的help文本为黑底红字
+* 涉及文件: src/service/Help.java
+* 完成状态: 已完成|已测试
+* 备注: 为什么不要白底黑字! 为什么不要白底黑字! 为什么不要白底黑字!
 ### [Sep 30, 2025] 优化存储文件路径 (Optimize storage file path)
 * 功能描述: 将service中的处理文件读写存的文件专门放入到一个专门的文件夹“repository”中, 使得未来维护更简单!
 * 涉及文件: src/repository/AddNewUserToProperties.java, src/repository/UserPropertiesFileParsing.java
