@@ -2,6 +2,7 @@ package service;
 
 // Responsible by San1tater
 
+import ui.Colours;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -13,15 +14,11 @@ public class Help {
     private final static int pageSize = 6;
     private static int currentPage = 1;
 
-    // color, wait for the color port made by MicroNeutron
-    public static final String ORANGE_RED = "\u001B[38;5;208m";
-    public static final String RESET = "\u001B[0m"; // 重置颜色
-
     // all the commands
     static {
         commands.add("/previous (use to see the previous pages of help)");
         commands.add("/next     (use to see the Next pages of help)");
-        commands.add("/exit_help      (use to exit help)");
+        commands.add("/exit      (use to exit help)");
     }
 
     // show the page number and display the page
@@ -37,7 +34,7 @@ public class Help {
 
         System.out.println("=== Commands (Page " + (currentPage) + " of " + totalPages + ") ===");
         for (int i = start; i < end; i++) {
-            System.out.println("\t" + ORANGE_RED + commands.get(i) + RESET);
+            System.out.println("\t" + Colours.BG_BLACK + Colours.RED + commands.get(i) + Colours.RESET);
         }
         System.out.println("Type /next or /previous to navigate pages, /exit_help to quit.");
     }
@@ -55,7 +52,7 @@ public class Help {
                 displayPage(currentPage + 1);
             } else if (input.equals("/previous")) {
                 displayPage(currentPage - 1);
-            } else if (input.equals("/exit_help")) {
+            } else if (input.equals("/exit")) {
                 System.out.println("Exiting help...");
                 break;
             } else {
