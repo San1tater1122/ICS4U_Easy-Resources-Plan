@@ -10,7 +10,7 @@
 ---
 ### [Sep 29, 2025] 开发了用户信息存储文件 (Developed user information storage files)
 * 功能描述: 从properties文件中读取文件并储存在一个list中, 还有添加新用户功能(自动储存到properties文件中)
-* 涉及文件: data/users.properties, src/service/AddNewUserToProperties, src/service/UserPropertiesFileParsing
+* 涉及文件: data/users.properties.java, src/service/AddNewUserToProperties.java, src/service/UserPropertiesFileParsing.java
 * 完成状态: 已完成|以测试
 * 备注: properties还是太权威了
 ### [Sep 29, 2025] 删减用户子类; 只保留User父类 (Delete the User subclass; only keep the User parent class) 
