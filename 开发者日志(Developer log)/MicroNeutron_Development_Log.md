@@ -8,24 +8,31 @@
 * 备注:(可选)遇到的问题、解决方法或后续工作.
 
 ---
+### [Sep 30, 2025] Script UI 四色视觉辅助系统 (Script UI four-color visual assistance system)  
+* 功能描述: 创建可用的颜色
+* 涉及文件: src/ui/colour.java
+* 完成状态: 完成
+* 备注: 略
+
+---
 ### [Sep 26, 2025] Script UI 四色视觉辅助系统 (Script UI four-color visual assistance system)  
-* 功能描述: 点击输入概念
-* 涉及文件: 略
-* 完成状态: 计划中
+* 功能描述: 许愿
+* 涉及文件: 愿望单
+* 完成状态: 文件夹已建
 * 备注: 略
 ### [Sep 26, 2025] Script UI 选择音效控制系统 (Script UI Select the sound control system)  
-* 功能描述: 点击输入概念
-* 涉及文件: 略
-* 完成状态: 计划中
+* 功能描述: 许愿
+* 涉及文件: 愿望单
+* 完成状态: 文件夹已建
 * 备注: 略
 ### [Sep 26, 2025] 进销存 月末一次加权平均成本单价计算 (Calculation of weighted average cost unit price at the end of the month)  
-* 功能描述: 点击输入概念
-* 涉及文件: 略
-* 完成状态: 计划中
+* 功能描述: 许愿
+* 涉及文件: 愿望单
+* 完成状态: 文件夹已建
 * 备注: 略
 ### [Sep 26, 2025] 数据库 多次写入 (Database multiple writes)  
-* 功能描述: 点击输入概念
-* 涉及文件: 略
-* 完成状态: 计划中
+* 功能描述: 许愿
+* 涉及文件: 愿望单
+* 完成状态: 文件夹已建
 * 备注: 略
 
