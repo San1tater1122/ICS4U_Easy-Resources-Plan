@@ -5,12 +5,12 @@ package model;
 public class Product {
     private short id;
     private String ProductName;
-    private int ProductPrice;
+    private float ProductPrice;
     private String ProductCategory;
     private String ProductSupplier;
     private int stock;
 
-    public Product(short id, String ProductName, int ProductPrice, String ProductCategory, String ProductSupplier){
+    public Product(short id, String ProductName, float ProductPrice, String ProductCategory, String ProductSupplier){
         this.id = id;
         this.ProductName = ProductName;
         this.ProductPrice = ProductPrice;
@@ -26,7 +26,7 @@ public class Product {
     // all the method to get the information of this product
     public short getID(){return id;}
     public String getProductName(){return ProductName;}
-    public int getProductPrice(){return ProductPrice;}
+    public float getProductPrice(){return ProductPrice;}
     public String getProductCategory(){return ProductCategory;}
     public String getProductSupplier(){return ProductSupplier;}
     public int getStock(){return stock;}
@@ -34,7 +34,7 @@ public class Product {
     // all the method to reset the information for this product
     public short resetID(short ID){return this.id = ID;}
     public String resetProductName(String PN){return this.ProductName = PN;}
-    public int resetProductPrice(int PP){return this.ProductPrice = PP;}
+    public float resetProductPrice(int PP){return this.ProductPrice = PP;}
     public String resetProductCategory(String PC){return this.ProductCategory = PC;}
     public String resetProductSupplier(String PS){return this.ProductSupplier = PS;}
     public int resetStock(int newStock){return  this.stock = newStock;}
