@@ -8,6 +8,13 @@
 * 备注:(可选)遇到的问题、解决方法或后续工作.
 
 ---
+### [Sep 30, 2025] 优化存储文件路径 (Optimize storage file path)
+* 功能描述: 将service中的处理文件读写存的文件专门放入到一个专门的文件夹“repository”中, 使得未来维护更简单!
+* 涉及文件: src/repository/AddNewUserToProperties.java, src/repository/UserPropertiesFileParsing.java
+* 完成状态: 已完成
+* 备注: 哈哈哈哈哈哈哈啊哈哈哈哈哈, 学校你专门盯着计算机课薅呗, 我吃柠檬, 啊稀巴! 八嘎牙路啊! 
+
+---
 ### [Sep 29, 2025] 开发了用户信息存储文件 (Developed user information storage files)
 * 功能描述: 从properties文件中读取文件并储存在一个list中, 还有添加新用户功能(自动储存到properties文件中)
 * 涉及文件: data/users.properties.java, src/service/AddNewUserToProperties.java, src/service/UserPropertiesFileParsing.java
