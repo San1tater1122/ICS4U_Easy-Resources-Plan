@@ -15,6 +15,8 @@ All logs must begin with month day, year.
 格式为如下: (The format is as follows:)   
 <img width="291" height="110" alt="截屏2025-09-28 15 51 51" src="https://github.com/user-attachments/assets/b2f1e386-f39c-4fb7-a374-fe39fe435e9a" />  
 // Responsible by XXX  
+当你想要修改其他负责人的代码时, 请在需求日志中写下需求让代码负责人来合作修改, 切勿擅自修改他人代码 (我就睡个觉回来怎么看不懂自己代码了.jpg)  
+If you want to modify someone else's code, please write it down in the requirements log and ask the code owner to collaborate on the modification. Do not modify other people's code without permission (I just slept and came back and couldn't understand my own code.jpg) 
 ## 📝贡献者日志格式 (Contributors Log format)
 日志必须用此格式，保持一致的排版。  
 日志内容要简洁清晰，方便他人理解。  
