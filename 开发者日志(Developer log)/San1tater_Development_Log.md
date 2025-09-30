@@ -8,6 +8,11 @@
 * 备注:(可选)遇到的问题、解决方法或后续工作.
 
 ---
+### [Sep 30, 2025] 添加产品存储文件及读取文件功能 (Add product storage file and file reading functions)
+* 功能描述: 添加产品存储文件及读取文件功能, 以及将product中价格值类改为float值.
+* 涉及文件: src/repository/ProductPropertiesFileParsing.java, src/model/Product.java, data/products.properties
+* 完成状态: 已完成|已测试
+* 备注: 这个和之前product inventory是两种东西, 还不能配合到一起, 之前的这个没有考虑到永久储存.
 ### [Sep 30, 2025] 优化Help功能 (Optimize Help Function)
 * 功能描述: 将Colour.java的功能加入到help中, 使得显示的help文本为黑底红字
 * 涉及文件: src/service/Help.java
