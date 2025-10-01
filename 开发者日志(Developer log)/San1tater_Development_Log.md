@@ -8,6 +8,11 @@
 * 备注:(可选)遇到的问题、解决方法或后续工作.
 
 ---
+### [Oct 1, 2025] 预设将Login连接入Main文件中 (By default, Login is connected to the Main file)
+* 功能描述: 为了以后的功能连接铺路.
+* 涉及文件: src/main/Main.java
+* 完成状态: 已完成|已测试
+* 备注: 略
 ### [Oct 1, 2025] 简化ProductList中的import (Simplify import in ProductList)
 * 功能描述: 将integerInputTest();变成InputTest.integerInputTest();, 这样就不需要import static service.InputTest.integerInputTest;了
 * 涉及文件: src/service/ProductList.java
