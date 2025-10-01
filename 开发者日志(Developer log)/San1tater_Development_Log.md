@@ -8,6 +8,13 @@
 * 备注:(可选)遇到的问题、解决方法或后续工作.
 
 ---
+### [Oct 1, 2025] 添加登录账号功能 (Add login account function)
+* 功能描述: 添加登录账号功能, 以读取所有用户到一个list中再将登录输入的进行对比, 最终如果成功登录将检车账号是否为Admin, 输出一个boolean 值
+* 涉及文件: src/service/Login.java
+* 完成状态: 已完成|已测试
+* 备注: 略
+
+---
 ### [Sep 30, 2025] 添加产品存储文件及读取文件功能 (Add product storage file and file reading functions)
 * 功能描述: 添加产品存储文件及读取文件功能, 以及将product中价格值类改为float值.
 * 涉及文件: src/repository/ProductPropertiesFileParsing.java, src/model/Product.java, data/products.properties
