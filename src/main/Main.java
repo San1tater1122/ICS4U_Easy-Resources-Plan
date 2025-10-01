@@ -1,9 +1,19 @@
 package main;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+//
+
+import java.io.IOException;
+import service.Login;
+
 public class Main {
-    public static void main(String[] args) {
+    public static boolean isAdmin;
+
+    public static void main(String[] args) throws IOException {
+        // while(true){
+            isAdmin = Login.loginFunction();
+            System.out.println("Admin = " + isAdmin);
+            // 界面function
+        //}
 
     }
 }
