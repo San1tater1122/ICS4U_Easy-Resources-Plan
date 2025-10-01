@@ -8,6 +8,11 @@
 * 备注:(可选)遇到的问题、解决方法或后续工作.
 
 ---
+### [Oct 1, 2025] 简化ProductList中的import (Simplify import in ProductList)
+* 功能描述: 将integerInputTest();变成InputTest.integerInputTest();, 这样就不需要import static service.InputTest.integerInputTest;了
+* 涉及文件: src/service/ProductList.java
+* 完成状态: 已完成|已测试
+* 备注: 略
 ### [Oct 1, 2025] 添加登录账号功能 (Add login account function)
 * 功能描述: 添加登录账号功能, 以读取所有用户到一个list中再将登录输入的进行对比, 最终如果成功登录将检车账号是否为Admin, 输出一个boolean 值
 * 涉及文件: src/service/Login.java
