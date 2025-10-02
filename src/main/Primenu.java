@@ -1,5 +1,5 @@
 import java.util.Scanner;
-import ui.Colour;
+import ui.Colours;
 
 //Created by MN
 
