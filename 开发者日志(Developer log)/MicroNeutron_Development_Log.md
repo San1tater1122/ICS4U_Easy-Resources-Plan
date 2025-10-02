@@ -6,6 +6,12 @@
 * 涉及文件: filename1.java, filename2.md
 * 完成状态:(已完成,进行中,计划中)|(有无测试)
 * 备注:(可选)遇到的问题、解决方法或后续工作.
+---
+### [Sep 30, 2025] 初级目录  
+* 功能描述: 使应用可以打开天窗说亮话
+* 涉及文件: main/Primenu.java
+* 完成状态: 完成
+* 备注: 略略略
 
 ---
 ### [Sep 30, 2025] Script UI 四色视觉辅助系统 (Script UI four-color visual assistance system)  
