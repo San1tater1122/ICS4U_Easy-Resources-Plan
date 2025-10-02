@@ -4,16 +4,23 @@ package main;
 
 import java.io.IOException;
 import service.Login;
+import ui.Colours;
 
 public class Main {
     public static boolean isAdmin;
+    public static boolean priMenu;
 
     public static void main(String[] args) throws IOException {
-        // while(true){
+        while(true){
+            priMenu = true;
             isAdmin = Login.loginFunction();
             System.out.println("Admin = " + isAdmin);
-            Primenu.primenu();
-        //}
+            while (priMenu){
+                System.out.println(Colours.GREEN + "---------------------------------------" + Colours.RESET);
+                Primenu.primenu();
+                System.out.println(Colours.GREEN + "---------------------------------------" + Colours.RESET);
+            }
+        }
 
     }
 }
