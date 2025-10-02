@@ -3,14 +3,14 @@ package model;
 // Responsible by San1tater
 
 public class Product {
-    private short id;
+    private int id;
     private String ProductName;
     private float ProductPrice;
     private String ProductCategory;
     private String ProductSupplier;
     private int stock;
 
-    public Product(short id, String ProductName, float ProductPrice, String ProductCategory, String ProductSupplier){
+    public Product(int id, String ProductName, float ProductPrice, String ProductCategory, String ProductSupplier){
         this.id = id;
         this.ProductName = ProductName;
         this.ProductPrice = ProductPrice;
@@ -24,7 +24,7 @@ public class Product {
     public void decreaseStock(int input){this.stock -= input;}
 
     // all the method to get the information of this product
-    public short getID(){return id;}
+    public int getID(){return id;}
     public String getProductName(){return ProductName;}
     public float getProductPrice(){return ProductPrice;}
     public String getProductCategory(){return ProductCategory;}
@@ -32,7 +32,7 @@ public class Product {
     public int getStock(){return stock;}
 
     // all the method to reset the information for this product
-    public short resetID(short ID){return this.id = ID;}
+    public int resetID(short ID){return this.id = ID;}
     public String resetProductName(String PN){return this.ProductName = PN;}
     public float resetProductPrice(int PP){return this.ProductPrice = PP;}
     public String resetProductCategory(String PC){return this.ProductCategory = PC;}
