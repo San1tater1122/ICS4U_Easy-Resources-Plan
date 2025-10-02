@@ -18,7 +18,8 @@ public class Help {
     static {
         commands.add("/previous (use to see the previous pages of help)");
         commands.add("/next     (use to see the Next pages of help)");
-        commands.add("/exit      (use to exit help)");
+        commands.add("/exit     (use to exit help)");
+        commands.add("/return   (use to return to the last menu)");
     }
 
     // show the page number and display the page
