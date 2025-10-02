@@ -1,5 +1,6 @@
 package ui;
-//created by MicroNeutron
+
+// created by MicroNeutron
 
 public class Colours {
     //font colour start
@@ -14,4 +15,4 @@ public class Colours {
     public static final String BG_PURPLE = "\u001B[45m";
     public static final String BG_CYAN = "\u001B[46m";
     public static final String BG_WHITE = "\u001B[47m";
-} 
+}

@@ -41,8 +41,6 @@ public class Login {
             System.out.println("Password: ");
             userPassword = sc.nextLine();
         }
-
-        sc.close();
         return isAdmin;
     }
 }

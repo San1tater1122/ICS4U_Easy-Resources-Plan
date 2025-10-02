@@ -12,7 +12,7 @@ public class Main {
         // while(true){
             isAdmin = Login.loginFunction();
             System.out.println("Admin = " + isAdmin);
-            // 界面function
+            Primenu.primenu();
         //}
 
     }

@@ -9,25 +9,25 @@ public class User {
     // (default) Not written: Same class, same package
     // private:               Same class
     protected short userID;
-    protected String email;
     protected String password;
     protected String userName;
-    protected String Role;
+    protected String role;
 
-    public User(short userID, String email, String password, String userName, String Role){
+    public User(short userID, String password, String userName, String role){
         this.userID = userID;
-        this.email = email;
         this.password = password;
         this.userName = userName;
-        this.Role = Role;
+        this.role = role;
     }
 
     public short getUserID(){return userID;}
-    public String getEmail(){return email;}
+    public String getUserName(){return userName;}
     public String getPassword(){return password;}
+    public String getRole(){return role;}
 
     public void resetUserID(short newID){this.userID = newID;}
-    public void resetUserEmail(String newEmail){this.email = newEmail;}
+    public void resetUserName(String newName){this.userName = newName;}
     public void resetUserPassword(String newPassword){this.password = newPassword;}
+    public void resetUserRole(String newRole){this.role = newRole;}
 
 }

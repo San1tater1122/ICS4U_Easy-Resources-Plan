@@ -59,10 +59,9 @@ public class Help {
                 System.out.println("Unknown command. Use /next, /previous, or /exit_help.");
             }
         }
-        scanner.close();
     }
 
-//     public static void main(String[] args){ // 单独调试用, 平时
-//         help();
-//     }
+     public static void main(String[] args){ // 单独调试用, 平时
+         help();
+     }
 }
