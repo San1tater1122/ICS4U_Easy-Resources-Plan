@@ -10,7 +10,7 @@ public class ProductList {
     private ArrayList<Product> ProductData = new ArrayList<>();
 
     // 添加商品信息
-    public void addProduct(short id, String ProductName, int ProductPrice, String ProductCategory, String ProductSupplier){
+    public void addProduct(int id, String ProductName, int ProductPrice, String ProductCategory, String ProductSupplier){
         Product newProduct = new Product(id, ProductName, ProductPrice, ProductCategory, ProductSupplier);
         ProductData.add(newProduct);
         System.out.println("Success! Item " + newProduct.getProductName() + "is added");
