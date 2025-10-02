@@ -8,6 +8,11 @@
 * 备注:(可选)遇到的问题、解决方法或后续工作.
 
 ---
+### [Oct 1, 2025] 将商品id正式化 (Formalize product IDs)
+* 功能描述: 将商品id正式化, short改为int.
+* 涉及文件: data/products.properties, src/model/Product.java, src/repository/ProductPropertiesFileParsing.java, src/service/ProductList.java
+* 完成状态: 已完成|未测试
+* 备注: 略
 ### [Oct 1, 2025] 预设将Login连接入Main文件中 (By default, Login is connected to the Main file)
 * 功能描述: 为了以后的功能连接铺路.
 * 涉及文件: src/main/Main.java
