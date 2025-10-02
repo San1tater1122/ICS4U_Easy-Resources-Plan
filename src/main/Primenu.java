@@ -3,7 +3,7 @@ import ui.Colour;
 
 //Created by MN
 
-public class primenu {
+public class Primenu {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
             System.out.println(Colours.BLUE + "ERP Menu");
