@@ -32,7 +32,7 @@ public class ProductPropertiesFileParsing {
         // 判断 Properties 文件里是否存在当前索引的产品, 当找不到 "productX.id" 时，说明所有产品都读取完了，循环停止
         while (prop.containsKey("product" + index + ".id")) {
 
-            short productID = Short.parseShort(prop.getProperty("product" + index + ".id"));
+            int productID = Integer.parseInt(prop.getProperty("product" + index + ".id"));
             String productName = prop.getProperty("product" + index + ".ProductName");
             float productPrice = Float.parseFloat(prop.getProperty("product" + index + ".ProductPrice"));
             String productCategory = prop.getProperty("product" + index + ".ProductCategory");
