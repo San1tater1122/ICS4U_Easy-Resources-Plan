@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+//Created by MN
+
 public class primenu {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
