@@ -8,6 +8,13 @@
 * 备注:(可选)遇到的问题、解决方法或后续工作.
 
 ---
+### [Oct 2, 2025] 修复致命BUG (fix bug in Primenu)
+* 功能描述: 修复了Scanner.close导致的系统崩溃.
+* 涉及文件: 所有src文件
+* 完成状态: 已完成|已测试
+* 备注: 略
+
+---
 ### [Oct 1, 2025] 将商品id正式化 (Formalize product IDs)
 * 功能描述: 将商品id正式化, short改为int.
 * 涉及文件: data/products.properties, src/model/Product.java, src/repository/ProductPropertiesFileParsing.java, src/service/ProductList.java
