@@ -8,6 +8,11 @@
 * 备注:(可选)遇到的问题、解决方法或后续工作.
 
 ---
+### [Oct 2, 2025] 添加LogOut功能 (Created the logout in Primenu)
+* 功能描述: logout可以退出账号, 退出程序, 支持/return返回上一界面
+* 涉及文件: src/main/LogOut.java
+* 完成状态: 已完成|已测试
+* 备注: 略
 ### [Oct 2, 2025] 修复致命BUG (fix bug in Primenu)
 * 功能描述: 修复了Scanner.close导致的系统崩溃.
 * 涉及文件: 所有src文件
