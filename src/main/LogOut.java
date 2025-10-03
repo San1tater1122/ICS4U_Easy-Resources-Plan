@@ -1,7 +1,8 @@
 package main;
 
-import ui.Colours;
+// responsible by San1tater
 
+import ui.Colours;
 import java.util.Scanner;
 
 public class LogOut {
