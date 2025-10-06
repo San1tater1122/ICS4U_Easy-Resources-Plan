@@ -23,31 +23,31 @@ public class Primenu {
         String choice = sc.nextLine();
         switch (choice) {
             case "1":
-                System.out.println(Colours.GREEN + "前面的区域，以后再来探索吧" + Colours.RESET);
+                ProductsInformation.productsInformation();
                 break;
 
             case "2":
-                System.out.println(Colours.RESET + "前面的区域，以后再来探索吧");
+                System.out.println("采购管理");
                 break;
 
             case "3":
-                System.out.println(Colours.RESET + "前面的区域，以后再来探索吧");
+                System.out.println("销售管理");
                 break;
                     
             case "4":
-                System.out.println(Colours.RESET + "前面的区域，以后再来探索吧");
+                System.out.println("仓库管理");
                 break;
 
             case "5":
-                System.out.println(Colours.RESET + "前面的区域，以后再来探索吧");
+                System.out.println("系统参数");
                 break;
                     
             case "6":
-                System.out.println(Colours.RESET + "前面的区域，以后再来探索吧");
+                System.out.println("查询/报表");
                 break;
 
             case "7":
-                System.out.println(Colours.RESET + "前面的区域，以后再来探索吧");
+                System.out.println("用户权限");
                 break;
 
             case "8":

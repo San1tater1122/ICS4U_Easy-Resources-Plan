@@ -8,6 +8,7 @@ import repository.UserPropertiesFileParsing;
 import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
+import ui.Colours;
 
 public class Login {
     public static boolean loginFunction() throws IOException {
@@ -15,9 +16,9 @@ public class Login {
 
         List<User> userList = UserPropertiesFileParsing.loadUsers();
 
-        System.out.println("Username: ");
+        System.out.println(Colours.GREEN + "Username: " + Colours.RESET);
         String userName = sc.nextLine();
-        System.out.println("Password: ");
+        System.out.println(Colours.GREEN + "Password: " + Colours.RESET);
         String userPassword = sc.nextLine();
 
         boolean isAdmin = false;
@@ -34,11 +35,11 @@ public class Login {
                 }
             }
             if(infoCorrect){break;}
-            System.out.println("Username or the Password is wrong! ");
+            System.out.println(Colours.GREEN + "Username or the Password is wrong! ");
             System.out.println("Please re-enter your Username and Password");
-            System.out.println("Username: ");
+            System.out.println("Username: " + Colours.RESET);
             userName = sc.nextLine();
-            System.out.println("Password: ");
+            System.out.println(Colours.GREEN + "Password: " + Colours.RESET);
             userPassword = sc.nextLine();
         }
         return isAdmin;

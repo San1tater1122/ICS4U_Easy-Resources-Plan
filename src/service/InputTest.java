@@ -15,7 +15,7 @@ public class InputTest {
                 output = Integer.parseInt(input);
                 if(output < 0){
                     System.out.println("You have to input a positive integer!");
-                    input = sc.nextLine();
+                    output = integerInputTest();
                 }
                 break;
             } catch (NumberFormatException e) {
@@ -27,5 +27,25 @@ public class InputTest {
         return output;
     }
 
+    public static float floatInputTest(){
+        Scanner sc = new Scanner(System.in);
+        String input = sc.nextLine();
+        float output;
 
+        while (true) {
+            try {
+                output = Float.parseFloat(input);
+                if(output < 0){
+                    System.out.println("You have to input a positive integer!");
+                    output = floatInputTest();
+                }
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("You have to input a positive integer!");
+                input = sc.nextLine();
+            }
+        }
+
+        return output;
+    }
 }

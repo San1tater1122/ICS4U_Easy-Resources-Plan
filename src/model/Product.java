@@ -32,12 +32,12 @@ public class Product {
     public int getStock(){return stock;}
 
     // all the method to reset the information for this product
-    public int resetID(short ID){return this.id = ID;}
-    public String resetProductName(String PN){return this.ProductName = PN;}
-    public float resetProductPrice(int PP){return this.ProductPrice = PP;}
-    public String resetProductCategory(String PC){return this.ProductCategory = PC;}
-    public String resetProductSupplier(String PS){return this.ProductSupplier = PS;}
-    public int resetStock(int newStock){return  this.stock = newStock;}
+    public void resetID(int ID){this.id = ID;}
+    public void resetProductName(String PN){this.ProductName = PN;}
+    public void resetProductPrice(float PP){this.ProductPrice = PP;}
+    public void resetProductCategory(String PC){this.ProductCategory = PC;}
+    public void resetProductSupplier(String PS){this.ProductSupplier = PS;}
+    public void resetStock(int newStock){this.stock = newStock;}
 
     // the method made previously to change to CSV file format.
     public String toCSV(){
