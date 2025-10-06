@@ -75,57 +75,39 @@ public class ProductList {
 
         Scanner sc = new Scanner(System.in);
         String action = sc.nextLine();
-        boolean anyMore = true;
-        while (anyMore){
-            switch (action) {
-                case "1":
-                    System.out.println("Please input the New ID: ");
-                    ProductData.get(i).resetID(InputTest.integerInputTest());
-                    System.out.println("Reset ID success! The new ID for product " + ProductData.get(i).getProductName() + " is " + ProductData.get(i).getID());
-                    recursiveReset(i);
-                    break;
-                case "2":
-                    System.out.println("Please input the New Name: ");
-                    String name = ConfirmRequest.confirm("Name");
-                    ProductData.get(i).resetProductName(name);
-                    System.out.println("Reset Name success! The new Name is " + ProductData.get(i).getProductName());
-                    recursiveReset(i);
-                    break;
-                case "3":
-                    System.out.println("Please input the New Price: ");
-                    ProductData.get(i).resetProductPrice(InputTest.floatInputTest());
-                    System.out.println("Reset Price success! The new Price for product " + ProductData.get(i).getProductName() + " is " + ProductData.get(i).getProductPrice());
-                    recursiveReset(i);
-                    break;
-                case "4":
-                    System.out.println("Please input the New Name: ");
-                    String category = ConfirmRequest.confirm("Category");
-                    ProductData.get(i).resetProductCategory(category);
-                    System.out.println("Reset Name success! The new Category for product " + ProductData.get(i).getProductName() + " is " + ProductData.get(i).getProductCategory());
-                    recursiveReset(i);
-                    break;
-                case "5":
-                    System.out.println("Please input the New Supplier: ");
-                    String Supplier = ConfirmRequest.confirm("Supplier");
-                    ProductData.get(i).resetProductSupplier(Supplier);
-                    System.out.println("Reset Name success! The new Supplier for product " + ProductData.get(i).getProductName() + " is " + ProductData.get(i).getProductSupplier());
-                    recursiveReset(i);
-                    break;
-                case "/return":
-                    break;
-                default:
-                    System.out.println("It is not a valid choice!");
-                    resetProductChoosing(i);
-            }
-        }
-    }
-
-    public static void recursiveReset(int i){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Do you need to reset any other value? [Y/Other]");
-        String respond = sc.nextLine();
-        if(respond.equals("Y") || respond.equals("y")){
-            resetProductChoosing(i);
+        switch (action) {
+            case "1":
+                System.out.println("Please input the New ID: ");
+                ProductData.get(i).resetID(InputTest.integerInputTest());
+                System.out.println("Reset ID success! The new ID for product " + ProductData.get(i).getProductName() + " is " + ProductData.get(i).getID());
+                break;
+            case "2":
+                System.out.println("Please input the New Name: ");
+                String name = ConfirmRequest.confirm("Name");
+                ProductData.get(i).resetProductName(name);
+                System.out.println("Reset Name success! The new Name is " + ProductData.get(i).getProductName());
+                break;
+            case "3":
+                System.out.println("Please input the New Price: ");
+                ProductData.get(i).resetProductPrice(InputTest.floatInputTest());
+                System.out.println("Reset Price success! The new Price for product " + ProductData.get(i).getProductName() + " is " + ProductData.get(i).getProductPrice());
+                break;
+            case "4":
+                System.out.println("Please input the New Name: ");
+                String category = ConfirmRequest.confirm("Category");
+                ProductData.get(i).resetProductCategory(category);
+                System.out.println("Reset Name success! The new Category for product " + ProductData.get(i).getProductName() + " is " + ProductData.get(i).getProductCategory());
+                break;
+            case "5":
+                System.out.println("Please input the New Supplier: ");
+                String Supplier = ConfirmRequest.confirm("Supplier");
+                ProductData.get(i).resetProductSupplier(Supplier);
+                System.out.println("Reset Name success! The new Supplier for product " + ProductData.get(i).getProductName() + " is " + ProductData.get(i).getProductSupplier());
+                break;
+            case "/return":
+                break;
+            default:
+                System.out.println("It is not a valid choice!");
         }
     }
 
