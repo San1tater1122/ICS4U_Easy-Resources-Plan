@@ -6,6 +6,12 @@
 * 涉及文件: filename1.java, filename2.md
 * 完成状态:(已完成,进行中,计划中)|(有无测试)
 * 备注:(可选)遇到的问题、解决方法或后续工作.
+---
+### [Oct 6, 2025] 重大更新! 完成产品信息模块 (Major update! Complete the product information module)
+* 功能描述: 产品信息模块以全部实装. 同时修复了bug (将价格全部统一换成float, 将之前忘记改的给改了). 顺边新添加String转float的输入测试. 优化了login界面.
+* 涉及文件: src/main/Primenu.java, src/main/ProductsInformation.java, src/model/Product.java, src/service/ConfirmRequest.java, src/service/InputTest.java, src/service/Login.java, src/service/ProductList.java.
+* 完成状态: 已完成|未测试
+* 备注: 由于还没有写打出列表/巡查信息的功能, 此功能还未能测试.
 
 ---
 ### [Oct 2, 2025] 添加LogOut功能 (Created the logout in Primenu)
