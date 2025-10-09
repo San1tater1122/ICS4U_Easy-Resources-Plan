@@ -7,7 +7,6 @@ import service.ProductList;
 import java.util.Scanner;
 import service.InputTest;
 import service.ConfirmRequest;
-import main.returnToMainMenu;
 
 public class ProductsInformation {
     public static void productsInformation(){
@@ -69,7 +68,7 @@ public class ProductsInformation {
                 productsInformation();
         }
 
-        returnToMainMenu.returnCommand();
+        ReturnToMainMenu.returnCommand();
 
     }
 }
