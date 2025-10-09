@@ -6,6 +6,14 @@
 * 涉及文件: filename1.java, filename2.md
 * 完成状态:(已完成,进行中,计划中)|(有无测试)
 * 备注:(可选)遇到的问题、解决方法或后续工作.
+
+---
+### [Oct 8, 2025] 创建商品价格输入BUG修复
+* 功能描述: 详见测试日志
+* 涉及文件: src/main/ProductsInformation.java
+* 完成状态 已完成|已测试
+* 备注: 略
+
 ---
 ### [Oct 6, 2025] 重大更新! 完成产品信息模块 (Major update! Complete the product information module)
 * 功能描述: 产品信息模块以全部实装. 同时修复了bug (将价格全部统一换成float, 将之前忘记改的给改了). 顺边新添加String转float的输入测试. 优化了login界面.
