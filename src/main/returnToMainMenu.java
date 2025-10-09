@@ -1,9 +1,10 @@
 package main;
 
+// responsible by San1tater
+
 import java.util.Scanner;
 import service.Help;
 import ui.Colours;
-import main.Main;
 
 public class returnToMainMenu {
     public static boolean returnCommand(){
