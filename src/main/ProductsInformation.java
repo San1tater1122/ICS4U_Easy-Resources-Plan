@@ -7,6 +7,7 @@ import service.ProductList;
 import java.util.Scanner;
 import service.InputTest;
 import service.ConfirmRequest;
+import main.returnToMainMenu;
 
 public class ProductsInformation {
     public static void productsInformation(){
@@ -16,6 +17,7 @@ public class ProductsInformation {
         System.out.println("2: Remove product information");
         System.out.println("3: Reset product information");
         System.out.println("Choose Function to Use:");
+        System.out.println("Or type /return to return to the main menu");
 
         String choice = sc.nextLine();
         switch (choice) {
@@ -26,7 +28,7 @@ public class ProductsInformation {
                 System.out.println("New product Name: ");
                 String name = ConfirmRequest.confirm("Name");
                 System.out.println("New product Price: ");
-                int price = InputTest.integerInputTest();
+                float price = InputTest.floatInputTest();
                 System.out.println("New product Category: ");
                 String category = ConfirmRequest.confirm("Category");
                 System.out.println("New product Supplier: ");
@@ -59,8 +61,15 @@ public class ProductsInformation {
                 }
                 ProductList.resetProduct(input1);
                 break;
+            case "/return":
+                Main.returnCommand = true;
+                break;
             default:
                 System.out.println(Colours.RED + "This is NOT a Function" + Colours.RESET);
+                productsInformation();
         }
+
+        returnToMainMenu.returnCommand();
+
     }
 }

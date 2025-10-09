@@ -16,10 +16,11 @@ public class Help {
 
     // all the commands
     static {
+        commands.add("/help     (use to see all the command)");
         commands.add("/previous (use to see the previous pages of help)");
         commands.add("/next     (use to see the Next pages of help)");
         commands.add("/exit     (use to exit help)");
-        commands.add("/return   (use to return to the last menu)");
+        commands.add("/return   (use to return to the main menu)");
     }
 
     // show the page number and display the page
@@ -37,7 +38,7 @@ public class Help {
         for (int i = start; i < end; i++) {
             System.out.println("\t" + Colours.BG_BLACK + Colours.RED + commands.get(i) + Colours.RESET);
         }
-        System.out.println("Type /next or /previous to navigate pages, /exit_help to quit.");
+        System.out.println("Type /next or /previous to navigate pages, /exit to quit.");
     }
 
     // next and previous to change the page number, include exit.

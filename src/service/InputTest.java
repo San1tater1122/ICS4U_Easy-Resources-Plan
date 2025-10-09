@@ -36,12 +36,12 @@ public class InputTest {
             try {
                 output = Float.parseFloat(input);
                 if(output < 0){
-                    System.out.println("You have to input a positive integer!");
+                    System.out.println("You have to input a positive number!");
                     output = floatInputTest();
                 }
                 break;
             } catch (NumberFormatException e) {
-                System.out.println("You have to input a positive integer!");
+                System.out.println("You have to input a positive number!");
                 input = sc.nextLine();
             }
         }
