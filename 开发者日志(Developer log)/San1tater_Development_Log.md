@@ -8,6 +8,11 @@
 * 备注:(可选)遇到的问题、解决方法或后续工作.
 
 ---
+### [Oct 8, 2025] 创建/return指令返回主界面, 防止光速返回
+* 功能描述: 创建/return指令返回主界面, 防止光速返回
+* 涉及文件: src/main/Main.java, src/main/ProductsInformation.java, src/main/ReturnToMainMenu.java
+* 完成状态 已完成|已测试
+* 备注: 略
 ### [Oct 8, 2025] 创建商品价格输入BUG修复
 * 功能描述: 详见测试日志
 * 涉及文件: src/main/ProductsInformation.java
