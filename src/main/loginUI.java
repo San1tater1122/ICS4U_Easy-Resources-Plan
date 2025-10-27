@@ -54,6 +54,8 @@ public class loginUI extends javax.swing.JFrame {
         ApplicationIcon = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Easy Resource Plan Alpha 1.0");
+        setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setIconImages(null);
         setLocationByPlatform(true);
         setMinimumSize(new java.awt.Dimension(800, 600));
@@ -98,7 +100,6 @@ public class loginUI extends javax.swing.JFrame {
         getContentPane().add(ExitButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(188, 334, -1, -1));
 
         ApplicationIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        ApplicationIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IconImage/Icon.png"))); // NOI18N
         ApplicationIcon.setMaximumSize(new java.awt.Dimension(100, 100));
         ApplicationIcon.setMinimumSize(new java.awt.Dimension(100, 100));
         ApplicationIcon.setPreferredSize(new java.awt.Dimension(100, 100));
@@ -165,7 +166,7 @@ public class loginUI extends javax.swing.JFrame {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> new loginUI().setVisible(true));
     }
