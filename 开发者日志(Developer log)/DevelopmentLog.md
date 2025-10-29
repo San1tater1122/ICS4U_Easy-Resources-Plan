@@ -7,6 +7,12 @@ Template:
 * Completion Status: (Completed, In Progress, Planned) | (Tested)
 * Notes: (Optional) Problems encountered, solutions, or follow-up work.
 ---
+### [Oct 29, 2025] graph icons and engine change
+* Changed By: Victor
+* Function Description: As the graphic designer, I drew three icons.
+* Documents involved: all src
+* Completion Status: In Progress
+* Note: login UI have finished, mainMenu Ul and addProductInformation UI is inprogress.
 ### [Oct 29, 2025] Major update, change engine! 
 * Changed By: Jinghao
 * Function Description: Switch to a different engine (written using NetBeans) for interaction.
