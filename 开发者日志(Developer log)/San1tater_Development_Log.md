@@ -6,6 +6,12 @@
 * 涉及文件: filename1.java, filename2.md
 * 完成状态:(已完成,进行中,计划中)|(有无测试)
 * 备注:(可选)遇到的问题、解决方法或后续工作.
+---
+### [Oct 29, 2025] Major update, change engine!
+* Function Description: Switch to a different engine (written using NetBeans) for interaction.
+* Documents involved: all src
+* Completion Status: In Progress
+* Note: login UI have finished, mainMenu Ul and addProductInformation UI is inprogress.
 
 ---
 ### [Oct 8, 2025] 创建/return指令返回主界面, 防止光速返回
