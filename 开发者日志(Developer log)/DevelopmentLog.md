@@ -1,5 +1,5 @@
 # Development Log
-Template:
+Template:  
 [Date] Feature/Change Title
 * Changed By: who did this change
 * Feature Description: Briefly describe what was done.
