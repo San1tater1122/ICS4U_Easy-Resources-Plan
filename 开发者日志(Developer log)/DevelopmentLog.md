@@ -81,6 +81,16 @@ Template:
 * Function Description: The files processed by the service for reading, writing, and storing files will be placed in a dedicated folder called "repository," making future maintenance easier!
 * Files Involved: src/repository/AddNewUserToProperties.java, src/repository/UserPropertiesFileParsing.java
 * Completion Status: Completed
+### [Sep 30, 2025] Initial Directory
+* Changed By: Victor
+* Function Description: Enables the application to speak frankly and openly.
+* Files Involved: main/Primenu.java
+* Completion Status: Completed
+### [Sep 30, 2025] Script UI Four-Color Visual Assistance System
+* Changed By: Victor
+* Function Description: Creates usable colors
+* File Involved: src/ui/colour.java
+* Completion Status: Completed
 
 ---
 ### [Sep 29, 2025] Developed user information storage files
@@ -135,3 +145,25 @@ Template:
 * File Involved: service/Help.java
 * Completion Status: Completed | Tested
 * Note: Remember to add any new commands to the command list.
+
+---
+### [Sep 26, 2025] Script UI Four-Color Visual Assistance System
+* Changed By: Victor
+* Function Description: Wish List
+* Related Files: Wish List
+* Completion Status: Folder Created
+### [Sep 26, 2025] Script UI Select the Sound Control System
+* Changed By: Victor
+* Function Description: Wish List
+* Related Files: Wish List
+* Completion Status: Folder Created
+### [Sep 26, 2025] Calculation of Weighted Average Cost Unit Price at the End of the Month
+* Changed By: Victor
+* Function Description: Wish List
+* Related Files: Wish List
+* Completion Status: Folder Created
+### [Sep 26, 2025] Database Database Multiple Writes
+* Changed By: Victor
+* Function Description: Wish List
+* Files Involved: Wish List
+* Completion Status: Folder Created
