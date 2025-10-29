@@ -7,11 +7,11 @@
 * 完成状态:(已完成,进行中,计划中)|(有无测试)
 * 备注:(可选)遇到的问题、解决方法或后续工作.
 ---
-[Oct 29, 2025] graph icons and engine change
-Function Description: As the graphic designer, I drew three icons.
-Documents involved: all src
-Completion Status: In Progress
-Note: login UI have finished, mainMenu Ul and addProductInformation UI is inprogress.
+### [Oct 29, 2025] graph icons and engine change
+* Function Description: As the graphic designer, I drew three icons.
+* Documents involved: all src
+* Completion Status: In Progress
+* Note: login UI have finished, mainMenu Ul and addProductInformation UI is inprogress.
 
 ---
 ### [Sep 30, 2025] 初级目录  
