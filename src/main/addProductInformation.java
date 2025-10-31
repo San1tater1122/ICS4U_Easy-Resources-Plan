@@ -4,6 +4,15 @@
  */
 package main;
 
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+import service.InputTest;
+import dataAnalyze.ProductPropertiesFileParsing;
+import java.util.ArrayList;
+import model.Product;
+import java.util.Scanner;
+import java.io.IOException;
+
 /**
  *
  * @author zhuangjinghao
@@ -11,12 +20,27 @@ package main;
 public class addProductInformation extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(addProductInformation.class.getName());
-
+    
+    private static ArrayList<Product> ProductData;
+    
+    static {
+        try {
+            ProductData = (ArrayList<Product>) ProductPropertiesFileParsing.loadProducts();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
     /**
      * Creates new form addProductInformation
      */
     public addProductInformation() {
         initComponents();
+        
+        DefaultTableModel model = (DefaultTableModel) ProductTable.getModel();
+        for(Product p : ProductData){
+            model.addRow(new Object[]{p.getID(), p.getProductName(), p.getProductPrice(), p.getProductCategory(), p.getProductSupplier()});
+        }
+        //model.addRow(new Object[]{id, name, price, category, supplier});
     }
 
     /**
@@ -28,6 +52,19 @@ public class addProductInformation extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        ProductTable = new javax.swing.JTable();
+        IDTextField = new javax.swing.JTextField();
+        ProductNameTextField = new javax.swing.JTextField();
+        ProductPrice = new javax.swing.JTextField();
+        ProductCategory = new javax.swing.JTextField();
+        ProductSupplier = new javax.swing.JTextField();
+        IDLabel = new javax.swing.JLabel();
+        IDLabel1 = new javax.swing.JLabel();
+        IDLabel2 = new javax.swing.JLabel();
+        IDLabel3 = new javax.swing.JLabel();
+        IDLabel4 = new javax.swing.JLabel();
+        AddProductButton = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         helpMenuBar = new javax.swing.JMenu();
         returnMenuBar = new javax.swing.JMenu();
@@ -38,6 +75,86 @@ public class addProductInformation extends javax.swing.JFrame {
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        ProductTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "ID", "Product Name", "Price ($)", "Category", "Supplier"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Float.class, java.lang.String.class, java.lang.String.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        ProductTable.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(ProductTable);
+        if (ProductTable.getColumnModel().getColumnCount() > 0) {
+            ProductTable.getColumnModel().getColumn(0).setResizable(false);
+            ProductTable.getColumnModel().getColumn(0).setPreferredWidth(20);
+            ProductTable.getColumnModel().getColumn(1).setResizable(false);
+            ProductTable.getColumnModel().getColumn(1).setPreferredWidth(160);
+            ProductTable.getColumnModel().getColumn(2).setResizable(false);
+            ProductTable.getColumnModel().getColumn(2).setPreferredWidth(15);
+            ProductTable.getColumnModel().getColumn(3).setResizable(false);
+            ProductTable.getColumnModel().getColumn(3).setPreferredWidth(20);
+            ProductTable.getColumnModel().getColumn(4).setResizable(false);
+            ProductTable.getColumnModel().getColumn(4).setPreferredWidth(40);
+        }
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 0, 560, 580));
+
+        IDTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                IDTextFieldActionPerformed(evt);
+            }
+        });
+        getContentPane().add(IDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 90, 150, -1));
+        getContentPane().add(ProductNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 150, -1));
+
+        ProductPrice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProductPriceActionPerformed(evt);
+            }
+        });
+        getContentPane().add(ProductPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 210, 150, -1));
+        getContentPane().add(ProductCategory, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 270, 150, -1));
+        getContentPane().add(ProductSupplier, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 330, 150, -1));
+
+        IDLabel.setText("Product Supplier");
+        getContentPane().add(IDLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 140, 20));
+
+        IDLabel1.setText("ID");
+        getContentPane().add(IDLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 140, -1));
+
+        IDLabel2.setText("Product Name");
+        getContentPane().add(IDLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 130, 140, 20));
+
+        IDLabel3.setText("Product Price (CAD $)");
+        getContentPane().add(IDLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 140, 20));
+
+        IDLabel4.setText("Product Category");
+        getContentPane().add(IDLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 140, 20));
+
+        AddProductButton.setText("Add Product");
+        AddProductButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddProductButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(AddProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, -1, -1));
 
         helpMenuBar.setText("Help");
         jMenuBar1.add(helpMenuBar);
@@ -66,6 +183,49 @@ public class addProductInformation extends javax.swing.JFrame {
         new mainMenuUI().setVisible(true);
     }//GEN-LAST:event_returnToMainMenuBarActionPerformed
 
+    private void IDTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IDTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_IDTextFieldActionPerformed
+
+    private void ProductPriceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProductPriceActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ProductPriceActionPerformed
+
+    private void AddProductButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddProductButtonActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model = (DefaultTableModel) ProductTable.getModel();
+        
+        boolean a = true;
+        
+        // 从输入框读取内容
+        int id = -1;
+        if(InputTest.integerInputTest(IDTextField.getText())){
+            id = Integer.parseInt(IDTextField.getText());
+        }else{
+            a = false;
+        }
+        
+        String name = ProductNameTextField.getText();
+        
+        float price = -1;
+        if(InputTest.floatInputTest(ProductPrice.getText())){
+            price = Float.parseFloat(ProductPrice.getText());
+        }else{
+            a = false;
+        }
+        
+        String category = ProductCategory.getText();
+        String supplier = ProductSupplier.getText();
+
+        // 添加新行
+        if(a){
+            model.addRow(new Object[]{id, name, price, category, supplier});
+        }else{
+            JOptionPane.showMessageDialog(null, "Information error, fail to add!");
+        }
+        
+    }//GEN-LAST:event_AddProductButtonActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -92,8 +252,21 @@ public class addProductInformation extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AddProductButton;
+    private javax.swing.JLabel IDLabel;
+    private javax.swing.JLabel IDLabel1;
+    private javax.swing.JLabel IDLabel2;
+    private javax.swing.JLabel IDLabel3;
+    private javax.swing.JLabel IDLabel4;
+    private javax.swing.JTextField IDTextField;
+    private javax.swing.JTextField ProductCategory;
+    private javax.swing.JTextField ProductNameTextField;
+    private javax.swing.JTextField ProductPrice;
+    private javax.swing.JTextField ProductSupplier;
+    private javax.swing.JTable ProductTable;
     private javax.swing.JMenu helpMenuBar;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenu returnMenuBar;
     private javax.swing.JMenuItem returnToMainMenuBar;
     // End of variables declaration//GEN-END:variables

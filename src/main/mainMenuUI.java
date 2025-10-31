@@ -61,9 +61,7 @@ public class mainMenuUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Easy Resource Plan Alpha 1.0");
-        setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
-        setPreferredSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         addProductInformationIcon.setMaximumSize(new java.awt.Dimension(75, 75));
@@ -79,6 +77,11 @@ public class mainMenuUI extends javax.swing.JFrame {
         removeProductInformationIcon.setMaximumSize(new java.awt.Dimension(75, 75));
         removeProductInformationIcon.setMinimumSize(new java.awt.Dimension(75, 75));
         removeProductInformationIcon.setPreferredSize(new java.awt.Dimension(75, 75));
+        removeProductInformationIcon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeProductInformationIconActionPerformed(evt);
+            }
+        });
         getContentPane().add(removeProductInformationIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 55, 78, 76));
 
         jButton3.setText("jButton3");
@@ -106,7 +109,7 @@ public class mainMenuUI extends javax.swing.JFrame {
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 137, 78, -1));
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("<html><body style='width: 50px'>Remove Product Information</body></html>");
+        jLabel3.setText("<html><body style='width: 50px'>Modify Product Information</body></html>");
         jLabel3.setToolTipText("");
         jLabel3.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabel3.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -214,6 +217,10 @@ public class mainMenuUI extends javax.swing.JFrame {
         setVisible(false);
         new loginUI().setVisible(true);
     }//GEN-LAST:event_logoutMenuBarMouseClicked
+
+    private void removeProductInformationIconActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeProductInformationIconActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_removeProductInformationIconActionPerformed
 
     /**
      * @param args the command line arguments
