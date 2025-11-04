@@ -220,6 +220,8 @@ public class mainMenuUI extends javax.swing.JFrame {
 
     private void removeProductInformationIconActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeProductInformationIconActionPerformed
         // TODO add your handling code here:
+        setVisible(false);
+        new removeProductInformation().setVisible(true);
     }//GEN-LAST:event_removeProductInformationIconActionPerformed
 
     /**

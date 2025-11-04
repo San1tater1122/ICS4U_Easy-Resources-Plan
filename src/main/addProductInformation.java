@@ -10,7 +10,7 @@ import service.InputTest;
 import dataAnalyze.ProductPropertiesFileParsing;
 import java.util.ArrayList;
 import model.Product;
-import java.util.Scanner;
+import dataAnalyze.AddNewProductToProperties;
 import java.io.IOException;
 
 /**
@@ -21,7 +21,7 @@ public class addProductInformation extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(addProductInformation.class.getName());
     
-    private static ArrayList<Product> ProductData;
+    public static ArrayList<Product> ProductData;
     
     static {
         try {
@@ -72,7 +72,6 @@ public class addProductInformation extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Easy Resource Plan Alpha 1.0");
-        setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -102,15 +101,10 @@ public class addProductInformation extends javax.swing.JFrame {
         ProductTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(ProductTable);
         if (ProductTable.getColumnModel().getColumnCount() > 0) {
-            ProductTable.getColumnModel().getColumn(0).setResizable(false);
             ProductTable.getColumnModel().getColumn(0).setPreferredWidth(20);
-            ProductTable.getColumnModel().getColumn(1).setResizable(false);
             ProductTable.getColumnModel().getColumn(1).setPreferredWidth(160);
-            ProductTable.getColumnModel().getColumn(2).setResizable(false);
             ProductTable.getColumnModel().getColumn(2).setPreferredWidth(15);
-            ProductTable.getColumnModel().getColumn(3).setResizable(false);
             ProductTable.getColumnModel().getColumn(3).setPreferredWidth(20);
-            ProductTable.getColumnModel().getColumn(4).setResizable(false);
             ProductTable.getColumnModel().getColumn(4).setPreferredWidth(40);
         }
 
@@ -196,6 +190,7 @@ public class addProductInformation extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) ProductTable.getModel();
         
         boolean a = true;
+        boolean b = true;
         
         // 从输入框读取内容
         int id = -1;
@@ -216,12 +211,37 @@ public class addProductInformation extends javax.swing.JFrame {
         
         String category = ProductCategory.getText();
         String supplier = ProductSupplier.getText();
+        
+        for (int i = 0; i < model.getRowCount(); i++) {
+            Object value = model.getValueAt(i, 0);
+            if (value == null) continue;
+            
+            int existingId = (int) model.getValueAt(i, 0); // 第0列是ID
+            
+            if (existingId == id) {
+                b = false; // 找到重复ID
+                break;
+            }
+        }
 
+        
         // 添加新行
-        if(a){
+        if(a && b){
             model.addRow(new Object[]{id, name, price, category, supplier});
+            String strprice = String.valueOf(price);
+            String strid = String.valueOf(id);
+            try{
+                AddNewProductToProperties.addproduct(strid, name, strprice, category, supplier);
+            }catch(IOException e){
+            }
+            ProductData.add(new Product(id, name, price, category, supplier));
         }else{
-            JOptionPane.showMessageDialog(null, "Information error, fail to add!");
+            if(b){
+                JOptionPane.showMessageDialog(null, "Information error, fail to add!");
+            }else{
+                JOptionPane.showMessageDialog(null, "Repeated Information, ID!");
+            }
+            
         }
         
     }//GEN-LAST:event_AddProductButtonActionPerformed
