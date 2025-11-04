@@ -7,6 +7,18 @@ Template:
 * Completion Status: (Completed, In Progress, Planned) | (Tested)
 * Notes: (Optional) Problems encountered, solutions, or follow-up work.
 ---
+### [Nov 3, 2025] Created the function and ui of remove products
+* Changed By: Jinghao
+* Function Description: Now that we have the ability to add and save items, it's also necessary to have the ability to delete items and remove things from the properties file.
+* Files Involved: src/removeProductInformation.java
+* Completion Status: Completed | Tested
+### [Nov 3, 2025] Improved the function of adding products
+* Changed By: Jinghao
+* Function Description: Now all additions will be stored in properties files, meaning this data is permanently saved.
+* Files Involved: src/addProductInformation.java
+* Completion Status: Completed | Tested
+
+---
 ### [Oct 29, 2025] graph icons and engine change
 * Changed By: Victor
 * Function Description: As the graphic designer, I drew three icons.
