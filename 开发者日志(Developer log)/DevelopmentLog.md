@@ -7,6 +7,13 @@ Template:
 * Completion Status: (Completed, In Progress, Planned) | (Tested)
 * Notes: (Optional) Problems encountered, solutions, or follow-up work.
 ---
+### [Nov 10, 2025] Merge, delete, and modify Product functions, A sort function has been added to the table.
+* Changed By: Jinghao
+* Function Description: As the title said
+* Files Involved: RemoveAndModifyProductInformation.java
+* Completion Status: Completed | Tested
+
+---
 ### [Nov 3, 2025] Created the function and ui of remove products
 * Changed By: Jinghao
 * Function Description: Now that we have the ability to add and save items, it's also necessary to have the ability to delete items and remove things from the properties file.
