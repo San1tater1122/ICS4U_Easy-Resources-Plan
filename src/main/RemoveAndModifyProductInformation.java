@@ -13,6 +13,11 @@ import java.util.Properties;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.Product;
+import dataAnalyze.RebuildProductProperties;
+import java.util.List;
+import javax.swing.RowSorter;
+import javax.swing.SortOrder;
+import javax.swing.table.TableRowSorter;
 
 import main.AddProductInformation;
 
@@ -55,26 +60,21 @@ public class RemoveAndModifyProductInformation extends javax.swing.JFrame {
         ProductTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
         RemoveButton = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        SearchByProductNameButton = new javax.swing.JButton();
-        SearchByIDTextField = new javax.swing.JTextField();
-        SearchByProductNameTextField = new javax.swing.JTextField();
-        jLabel3 = new javax.swing.JLabel();
-        SearchByIDButton = new javax.swing.JButton();
+        SortButton = new javax.swing.JButton();
+        SaveButton = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         helpMenuBar = new javax.swing.JMenu();
         returnMenuBar = new javax.swing.JMenu();
         returnMainMenuBar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Easy Resource Plan Alpha 1.0");
-        setMaximumSize(new java.awt.Dimension(800, 600));
+        setTitle("Easy Resource Plan Alpha 1.1");
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ProductTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null}
+
             },
             new String [] {
                 "ID", "Product Name", "Price ($)", "Category", "Supplier", "Stock"
@@ -103,7 +103,7 @@ public class RemoveAndModifyProductInformation extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Select And Remove");
         jLabel1.setToolTipText("");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 380, 120, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 430, 120, -1));
 
         RemoveButton.setText("Remove");
         RemoveButton.addActionListener(new java.awt.event.ActionListener() {
@@ -111,28 +111,23 @@ public class RemoveAndModifyProductInformation extends javax.swing.JFrame {
                 RemoveButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(RemoveButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 410, 120, -1));
+        getContentPane().add(RemoveButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 450, 120, -1));
 
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("<html><body style='width: 80px'>  Search By Product Name</body></html>");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 230, 120, 40));
-
-        SearchByProductNameButton.setText("Search");
-        getContentPane().add(SearchByProductNameButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 320, -1, -1));
-        getContentPane().add(SearchByIDTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 140, 120, -1));
-
-        SearchByProductNameTextField.addActionListener(new java.awt.event.ActionListener() {
+        SortButton.setText("Sort Functon");
+        SortButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SearchByProductNameTextFieldActionPerformed(evt);
+                SortButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(SearchByProductNameTextField, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 280, 120, -1));
+        getContentPane().add(SortButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 10, 120, -1));
 
-        jLabel3.setText("Search By ID");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 110, -1, -1));
-
-        SearchByIDButton.setText("Search");
-        getContentPane().add(SearchByIDButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 180, -1, -1));
+        SaveButton.setText("Save Changes");
+        SaveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(SaveButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 260, 120, 30));
 
         helpMenuBar.setText("Help");
         jMenuBar1.add(helpMenuBar);
@@ -203,7 +198,7 @@ public class RemoveAndModifyProductInformation extends javax.swing.JFrame {
         // 保存回文件
         try {
             FileOutputStream out = new FileOutputStream("data/products.properties");
-            prop.store(out, "Responsible by San1tater");
+            prop.store(out, "Rebuilt Product Data by: " + LoginUI.currentUser);
         } catch (IOException ex) {
             System.getLogger(RemoveAndModifyProductInformation.class.getName()).log(System.Logger.Level.ERROR, (String) null, ex);
         }
@@ -215,9 +210,62 @@ public class RemoveAndModifyProductInformation extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this, "Product deleted successfully!");
     }//GEN-LAST:event_RemoveButtonActionPerformed
 
-    private void SearchByProductNameTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchByProductNameTextFieldActionPerformed
+    private void SaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveButtonActionPerformed
+        
+        DefaultTableModel model = (DefaultTableModel) ProductTable.getModel();
+        for (int i = 0; i < model.getRowCount(); i++) {
+            try {
+                int id = Integer.parseInt(model.getValueAt(i, 0).toString());
+                String name = model.getValueAt(i, 1).toString();
+                float price = Float.parseFloat(model.getValueAt(i, 2).toString());
+                String category = model.getValueAt(i, 3).toString();
+                String supplier = model.getValueAt(i, 4).toString();
+                int stock = Integer.parseInt(model.getValueAt(i, 5).toString());
+
+                // 在 ProductData 中找对应的 product
+                for (Product p : AddProductInformation.ProductData) {
+                    if (p.getID() == id) { // 注意：Product.java 里是 getID()
+                        p.resetProductName(name);
+                        p.resetProductPrice(price);
+                        p.resetProductCategory(category);
+                        p.resetProductSupplier(supplier);
+                        p.resetStock(stock);
+                        break;
+                    }
+                }
+            } catch (Exception e) {}
+        }
+        
+        RebuildProductProperties.rebuildProductProperties(AddProductInformation.ProductData);
+        
+    }//GEN-LAST:event_SaveButtonActionPerformed
+    
+    private boolean idSortAscending = true;
+    private void SortButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SortButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_SearchByProductNameTextFieldActionPerformed
+        // 获取表格模型
+        DefaultTableModel model = (DefaultTableModel) ProductTable.getModel();
+
+        // 创建或获取 TableRowSorter
+        TableRowSorter<DefaultTableModel> sorter = (TableRowSorter<DefaultTableModel>) ProductTable.getRowSorter();
+        if (sorter == null) {
+            sorter = new TableRowSorter<>(model);
+            ProductTable.setRowSorter(sorter);
+        }
+
+        // 设置排序键
+        List<RowSorter.SortKey> sortKeys = new ArrayList<>();
+        if (idSortAscending) {
+            sortKeys.add(new RowSorter.SortKey(0, SortOrder.ASCENDING)); // ID 列升序
+        } else {
+            sortKeys.add(new RowSorter.SortKey(0, SortOrder.DESCENDING)); // ID 列降序
+        }
+        sorter.setSortKeys(sortKeys);
+        sorter.sort();
+
+        // 切换排序状态，下次点击相反
+        idSortAscending = !idSortAscending;
+    }//GEN-LAST:event_SortButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -247,14 +295,10 @@ public class RemoveAndModifyProductInformation extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable ProductTable;
     private javax.swing.JButton RemoveButton;
-    private javax.swing.JButton SearchByIDButton;
-    private javax.swing.JTextField SearchByIDTextField;
-    private javax.swing.JButton SearchByProductNameButton;
-    private javax.swing.JTextField SearchByProductNameTextField;
+    private javax.swing.JButton SaveButton;
+    private javax.swing.JButton SortButton;
     private javax.swing.JMenu helpMenuBar;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenuItem returnMainMenuBar;

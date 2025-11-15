@@ -12,6 +12,10 @@ import java.util.ArrayList;
 import model.Product;
 import dataAnalyze.AddNewProductToProperties;
 import java.io.IOException;
+import java.util.List;
+import javax.swing.RowSorter;
+import javax.swing.SortOrder;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -65,19 +69,20 @@ public class AddProductInformation extends javax.swing.JFrame {
         IDLabel3 = new javax.swing.JLabel();
         IDLabel4 = new javax.swing.JLabel();
         AddProductButton = new javax.swing.JButton();
+        SortButton = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         helpMenuBar = new javax.swing.JMenu();
         returnMenuBar = new javax.swing.JMenu();
         returnToMainMenuBar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Easy Resource Plan Alpha 1.0");
+        setTitle("Easy Resource Plan Alpha 1.1");
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ProductTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "ID", "Product Name", "Price ($)", "Category", "Supplier"
@@ -149,6 +154,14 @@ public class AddProductInformation extends javax.swing.JFrame {
             }
         });
         getContentPane().add(AddProductButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 390, -1, -1));
+
+        SortButton.setText("Sort Functon");
+        SortButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SortButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(SortButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 120, -1));
 
         helpMenuBar.setText("Help");
         jMenuBar1.add(helpMenuBar);
@@ -245,6 +258,34 @@ public class AddProductInformation extends javax.swing.JFrame {
         }
         
     }//GEN-LAST:event_AddProductButtonActionPerformed
+    
+    private boolean idSortAscending = true;
+    private void SortButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SortButtonActionPerformed
+        // TODO add your handling code here:
+        // 获取表格模型
+        DefaultTableModel model = (DefaultTableModel) ProductTable.getModel();
+
+        // 创建或获取 TableRowSorter
+        TableRowSorter<DefaultTableModel> sorter = (TableRowSorter<DefaultTableModel>) ProductTable.getRowSorter();
+        if (sorter == null) {
+            sorter = new TableRowSorter<>(model);
+            ProductTable.setRowSorter(sorter);
+        }
+
+        // 设置排序键
+        List<RowSorter.SortKey> sortKeys = new ArrayList<>();
+        
+        if (idSortAscending) {
+            sortKeys.add(new RowSorter.SortKey(0, SortOrder.ASCENDING)); // ID 列升序
+        } else {
+            sortKeys.add(new RowSorter.SortKey(0, SortOrder.DESCENDING)); // ID 列降序
+        }
+        sorter.setSortKeys(sortKeys);
+        sorter.sort();
+
+        // 切换排序状态，下次点击相反
+        idSortAscending = !idSortAscending;
+    }//GEN-LAST:event_SortButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -284,6 +325,7 @@ public class AddProductInformation extends javax.swing.JFrame {
     private javax.swing.JTextField ProductPrice;
     private javax.swing.JTextField ProductSupplier;
     private javax.swing.JTable ProductTable;
+    private javax.swing.JButton SortButton;
     private javax.swing.JMenu helpMenuBar;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;

@@ -5,9 +5,15 @@
 package main;
 
 import dataAnalyze.ProductPropertiesFileParsing;
+import dataAnalyze.RebuildProductProperties;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+import javax.swing.RowSorter;
+import javax.swing.SortOrder;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import model.Product;
 
 /**
@@ -32,7 +38,7 @@ public class PurchasingSaleStorageManagement extends javax.swing.JFrame {
         initComponents();
         DefaultTableModel model = (DefaultTableModel) ProductTable.getModel();
         for(Product p : AddProductInformation.ProductData){
-            model.addRow(new Object[]{p.getID(), p.getProductName(), p.getProductPrice(), p.getProductCategory(), p.getProductSupplier(), p.getStock()});
+            model.addRow(new Object[]{p.getID(), p.getProductName(), p.getProductPrice(), p.getProductCategory(), p.getStock()});
         }
     }
 
@@ -48,23 +54,24 @@ public class PurchasingSaleStorageManagement extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         ProductTable = new javax.swing.JTable();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jTextField1 = new javax.swing.JTextField();
+        AddStockButton = new javax.swing.JButton();
+        DecreaseStockButton = new javax.swing.JButton();
+        StockResetValueButton = new javax.swing.JButton();
+        StockChangeInputTextBox = new javax.swing.JTextField();
+        SortButton = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         helpMenuBar = new javax.swing.JMenu();
         returnMenuBar = new javax.swing.JMenu();
         returnMainMenuBar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(800, 600));
+        setTitle("Easy Resource Plan Alpha 1.1");
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         ProductTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null}
+
             },
             new String [] {
                 "ID", "Product Name", "Price ($)", "Category", "Stock"
@@ -88,28 +95,51 @@ public class PurchasingSaleStorageManagement extends javax.swing.JFrame {
         ProductTable.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(ProductTable);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 600, 590));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 0, 600, 580));
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Stock Change");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 130, -1));
 
-        jButton1.setText("Add Stock");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 130, -1));
-
-        jButton2.setText("Decrease Stock");
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 130, -1));
-
-        jButton3.setText("Stock Reset");
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 130, -1));
-
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        AddStockButton.setText("Add Stock");
+        AddStockButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                AddStockButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 130, 20));
+        getContentPane().add(AddStockButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 290, 130, -1));
+
+        DecreaseStockButton.setText("Decrease Stock");
+        DecreaseStockButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DecreaseStockButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(DecreaseStockButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 130, -1));
+
+        StockResetValueButton.setText("Stock Reset");
+        StockResetValueButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StockResetValueButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(StockResetValueButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 370, 130, -1));
+
+        StockChangeInputTextBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StockChangeInputTextBoxActionPerformed(evt);
+            }
+        });
+        getContentPane().add(StockChangeInputTextBox, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 240, 130, 30));
+
+        SortButton.setText("Sort Functon");
+        SortButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SortButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(SortButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 120, -1));
 
         helpMenuBar.setText("Help");
         jMenuBar1.add(helpMenuBar);
@@ -137,9 +167,185 @@ public class PurchasingSaleStorageManagement extends javax.swing.JFrame {
         new MainMenuUI().setVisible(true);
     }//GEN-LAST:event_returnMainMenuBarActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void StockChangeInputTextBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StockChangeInputTextBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_StockChangeInputTextBoxActionPerformed
+    
+    private boolean idSortAscending = true;
+    private void SortButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SortButtonActionPerformed
+        // TODO add your handling code here:
+        // 获取表格模型
+        DefaultTableModel model = (DefaultTableModel) ProductTable.getModel();
+
+        // 创建或获取 TableRowSorter
+        TableRowSorter<DefaultTableModel> sorter = (TableRowSorter<DefaultTableModel>) ProductTable.getRowSorter();
+        if (sorter == null) {
+            sorter = new TableRowSorter<>(model);
+            ProductTable.setRowSorter(sorter);
+        }
+
+        // 设置排序键
+        List<RowSorter.SortKey> sortKeys = new ArrayList<>();
+
+        if (idSortAscending) {
+            sortKeys.add(new RowSorter.SortKey(0, SortOrder.ASCENDING)); // ID 列升序
+        } else {
+            sortKeys.add(new RowSorter.SortKey(0, SortOrder.DESCENDING)); // ID 列降序
+        }
+        sorter.setSortKeys(sortKeys);
+        sorter.sort();
+
+        // 切换排序状态，下次点击相反
+        idSortAscending = !idSortAscending;
+    }//GEN-LAST:event_SortButtonActionPerformed
+
+    private void AddStockButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddStockButtonActionPerformed
+        int selectedRow = ProductTable.getSelectedRow();
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Please select a product first!");
+                return;
+        }
+
+        // 从输入框读取要增加的数量
+        String inputText = StockChangeInputTextBox.getText().trim();
+        if (inputText.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter a stock amount!");
+            return;
+        }
+
+        int addAmount;
+        try {
+            addAmount = Integer.parseInt(inputText);
+            if (addAmount <= 0) {
+                JOptionPane.showMessageDialog(this, "Please enter a positive number!");
+                return;
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid number!");
+            return;
+        }
+    
+        // 取得 JTable 的 model
+        DefaultTableModel model = (DefaultTableModel) ProductTable.getModel();
+
+        // 从表格取出当前 stock
+        int currentStock = Integer.parseInt(model.getValueAt(selectedRow, 4).toString());
+        int newStock = currentStock + addAmount;
+
+        // 更新 JTable
+        model.setValueAt(newStock, selectedRow, 4);
+
+        // 更新 ProductData
+        int id = Integer.parseInt(model.getValueAt(selectedRow, 0).toString());
+        for (Product p : AddProductInformation.ProductData) {
+            if (p.getID() == id) {
+                p.increaseStock(addAmount);
+                break;
+            }
+        }
+        
+        RebuildProductProperties.rebuildProductProperties(AddProductInformation.ProductData);
+    }//GEN-LAST:event_AddStockButtonActionPerformed
+
+    private void DecreaseStockButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DecreaseStockButtonActionPerformed
+        // TODO add your handling code here:
+        int selectedRow = ProductTable.getSelectedRow();
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Please select a product first!");
+                return;
+        }
+
+        // 从输入框读取要增加的数量
+        String inputText = StockChangeInputTextBox.getText().trim();
+        if (inputText.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter a stock amount!");
+            return;
+        }
+
+        int reduceAmount;
+        try {
+            reduceAmount = Integer.parseInt(inputText);
+            if (reduceAmount <= 0) {
+                JOptionPane.showMessageDialog(this, "Please enter a positive number!");
+                return;
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid number!");
+            return;
+        }
+    
+        // 取得 JTable 的 model
+        DefaultTableModel model = (DefaultTableModel) ProductTable.getModel();
+
+        // 从表格取出当前 stock
+        int currentStock = Integer.parseInt(model.getValueAt(selectedRow, 4).toString());
+        int newStock = currentStock - reduceAmount;
+        
+        if(newStock < 0){
+            JOptionPane.showMessageDialog(this, "Insufficient Goods! You dont have enough goods to reduce.");
+            return;
+        }
+
+        // 更新 JTable
+        model.setValueAt(newStock, selectedRow, 4);
+
+        // 更新 ProductData
+        int id = Integer.parseInt(model.getValueAt(selectedRow, 0).toString());
+        for (Product p : AddProductInformation.ProductData) {
+            if (p.getID() == id) {
+                p.decreaseStock(reduceAmount);
+                break;
+            }
+        }
+        
+        RebuildProductProperties.rebuildProductProperties(AddProductInformation.ProductData);
+    }//GEN-LAST:event_DecreaseStockButtonActionPerformed
+
+    private void StockResetValueButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StockResetValueButtonActionPerformed
+        // TODO add your handling code here:
+        // TODO add your handling code here:
+        int selectedRow = ProductTable.getSelectedRow();
+        if (selectedRow == -1) {
+            JOptionPane.showMessageDialog(this, "Please select a product first!");
+                return;
+        }
+
+        // 从输入框读取要增加的数量
+        String inputText = StockChangeInputTextBox.getText().trim();
+        if (inputText.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter a stock amount!");
+            return;
+        }
+
+        int resetAmount;
+        try {
+            resetAmount = Integer.parseInt(inputText);
+            if (resetAmount <= 0) {
+                JOptionPane.showMessageDialog(this, "Please enter a positive number!");
+                return;
+            }
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "Invalid number!");
+            return;
+        }
+    
+        // 取得 JTable 的 model
+        DefaultTableModel model = (DefaultTableModel) ProductTable.getModel();
+
+        // 更新 JTable
+        model.setValueAt(resetAmount, selectedRow, 4);
+
+        // 更新 ProductData
+        int id = Integer.parseInt(model.getValueAt(selectedRow, 0).toString());
+        for (Product p : AddProductInformation.ProductData) {
+            if (p.getID() == id) {
+                p.resetStock(resetAmount);
+                break;
+            }
+        }
+        
+        RebuildProductProperties.rebuildProductProperties(AddProductInformation.ProductData);
+    }//GEN-LAST:event_StockResetValueButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -167,15 +373,16 @@ public class PurchasingSaleStorageManagement extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AddStockButton;
+    private javax.swing.JButton DecreaseStockButton;
     private javax.swing.JTable ProductTable;
+    private javax.swing.JButton SortButton;
+    private javax.swing.JTextField StockChangeInputTextBox;
+    private javax.swing.JButton StockResetValueButton;
     private javax.swing.JMenu helpMenuBar;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JMenuItem returnMainMenuBar;
     private javax.swing.JMenu returnMenuBar;
     // End of variables declaration//GEN-END:variables

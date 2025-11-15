@@ -22,7 +22,9 @@ import java.awt.Image;           // Image
 public class LoginUI extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(LoginUI.class.getName());
-
+    
+    public static String currentUser = "noOne";
+    public static boolean userIsAdmin = false;
     /**
      * Creates new form UI
      */
@@ -54,7 +56,7 @@ public class LoginUI extends javax.swing.JFrame {
         ApplicationIcon = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Easy Resource Plan Alpha 1.0");
+        setTitle("Easy Resource Plan Alpha 1.1");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setIconImages(null);
         setLocationByPlatform(true);
@@ -128,6 +130,11 @@ public class LoginUI extends javax.swing.JFrame {
                     System.out.println("Login Success!");
                     JOptionPane.showMessageDialog(null, "Login Successful!");
                     loginSuccess = true;
+                    currentUser = Username.getText();
+                    
+                    if(user.getRole().equals("ADMIN")){
+                        userIsAdmin = true;
+                    }
                     break;
                 }
             }

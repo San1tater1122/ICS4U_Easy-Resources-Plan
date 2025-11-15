@@ -2,14 +2,21 @@ package dataAnalyze;
 
 // Responsible by San1tater
 
-import model.User;
 import java.util.*;
 import java.io.*;
 
 public class AddNewUserToProperties {
     private static File file = new File("data/users.properties");
 
-    public static void addUser(User newUser) throws IOException {
+    /**
+     *
+     * @param id
+     * @param UN
+     * @param PW
+     * @param role
+     * @throws IOException
+     */
+    public static void addUser(String id, String UN, String PW, String role) throws IOException {
         Properties prop = new Properties();
         prop.load(new FileInputStream(file));
 
@@ -19,13 +26,11 @@ public class AddNewUserToProperties {
             index++;
         }
 
-        prop.setProperty("user" + index + ".userID", String.valueOf(newUser.getUserID()));
-        prop.setProperty("user" + index + ".userName", newUser.getUserName());
-        prop.setProperty("user" + index + ".password", newUser.getPassword());
-        prop.setProperty("user" + index + ".role", newUser.getRole());
-        
+        prop.setProperty("user" + index + ".userID", id);
+        prop.setProperty("user" + index + ".userName", UN);
+        prop.setProperty("user" + index + ".password", PW);
+        prop.setProperty("user" + index + ".role", role);
 
-
-        prop.store(new FileOutputStream(file), "Responsible by San1tater\nAdded new user" + newUser.getUserName() );
+        prop.store(new FileOutputStream(file), "Responsible by San1tater\n");
     }
 }
