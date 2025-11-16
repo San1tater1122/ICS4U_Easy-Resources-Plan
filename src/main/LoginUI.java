@@ -56,7 +56,7 @@ public class LoginUI extends javax.swing.JFrame {
         ApplicationIcon = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Easy Resource Plan Alpha 1.1");
+        setTitle("Easy Resource Plan Alpha 1.2");
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         setIconImages(null);
         setLocationByPlatform(true);

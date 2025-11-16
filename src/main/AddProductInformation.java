@@ -11,8 +11,10 @@ import dataAnalyze.ProductPropertiesFileParsing;
 import java.util.ArrayList;
 import model.Product;
 import dataAnalyze.AddNewProductToProperties;
+import java.awt.Desktop;
 import java.io.IOException;
 import java.util.List;
+import javax.swing.JLabel;
 import javax.swing.RowSorter;
 import javax.swing.SortOrder;
 import javax.swing.table.TableRowSorter;
@@ -76,7 +78,7 @@ public class AddProductInformation extends javax.swing.JFrame {
         returnToMainMenuBar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Easy Resource Plan Alpha 1.1");
+        setTitle("Easy Resource Plan Alpha 1.2");
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -164,6 +166,11 @@ public class AddProductInformation extends javax.swing.JFrame {
         getContentPane().add(SortButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 10, 120, -1));
 
         helpMenuBar.setText("Help");
+        helpMenuBar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                helpMenuBarMouseClicked(evt);
+            }
+        });
         jMenuBar1.add(helpMenuBar);
 
         returnMenuBar.setText("Return");
@@ -286,6 +293,26 @@ public class AddProductInformation extends javax.swing.JFrame {
         // 切换排序状态，下次点击相反
         idSortAscending = !idSortAscending;
     }//GEN-LAST:event_SortButtonActionPerformed
+
+    private void helpMenuBarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpMenuBarMouseClicked
+        // TODO add your handling code here:
+        // GPT's method to make the link clickable
+        String url = "https://github.com/San1tater1122/ICS4U_Easy-Resources-Plan";
+
+        JLabel link = new JLabel("<html>Go to our Github to see the tutorial! :)<br>"
+                + "<a href=''>" + url + "</a></html>");
+
+        link.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent e) {
+                try {
+                    Desktop.getDesktop().browse(new java.net.URI(url));
+                } catch (Exception ex) {}
+            }
+        });
+
+        JOptionPane.showMessageDialog(null, link, "Tutorial", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_helpMenuBarMouseClicked
 
     /**
      * @param args the command line arguments

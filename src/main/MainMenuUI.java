@@ -4,8 +4,11 @@
  */
 package main;
 
+import java.awt.Desktop;
 import javax.swing.ImageIcon;   // ImageIcon
 import java.awt.Image;           // Image
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -56,7 +59,7 @@ public class MainMenuUI extends javax.swing.JFrame {
         logoutMenuBar = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Easy Resource Plan Alpha 1.1");
+        setTitle("Easy Resource Plan Alpha 1.2");
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -124,6 +127,11 @@ public class MainMenuUI extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, 80, 40));
 
         HelpButton.setText("Help");
+        HelpButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HelpButtonMouseClicked(evt);
+            }
+        });
         jMenuBar1.add(HelpButton);
 
         logoutMenuBar.setText("Logout");
@@ -175,7 +183,29 @@ public class MainMenuUI extends javax.swing.JFrame {
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
+        setVisible(false);
+        new PurchasingSaleStorageManagement().setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void HelpButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HelpButtonMouseClicked
+        // TODO add your handling code here:
+        // GPT's method to make the link clickable
+        String url = "https://github.com/San1tater1122/ICS4U_Easy-Resources-Plan";
+
+        JLabel link = new JLabel("<html>Go to our Github to see the tutorial! :)<br>"
+                + "<a href=''>" + url + "</a></html>");
+
+        link.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent e) {
+                try {
+                    Desktop.getDesktop().browse(new java.net.URI(url));
+                } catch (Exception ex) {}
+            }
+        });
+
+        JOptionPane.showMessageDialog(null, link, "Tutorial", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_HelpButtonMouseClicked
 
     /**
      * @param args the command line arguments

@@ -6,9 +6,11 @@ package main;
 
 import dataAnalyze.ProductPropertiesFileParsing;
 import dataAnalyze.RebuildProductProperties;
+import java.awt.Desktop;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.RowSorter;
 import javax.swing.SortOrder;
@@ -65,7 +67,7 @@ public class PurchasingSaleStorageManagement extends javax.swing.JFrame {
         returnMainMenuBar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Easy Resource Plan Alpha 1.1");
+        setTitle("Easy Resource Plan Alpha 1.2");
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -142,6 +144,11 @@ public class PurchasingSaleStorageManagement extends javax.swing.JFrame {
         getContentPane().add(SortButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 10, 120, -1));
 
         helpMenuBar.setText("Help");
+        helpMenuBar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                helpMenuBarMouseClicked(evt);
+            }
+        });
         jMenuBar1.add(helpMenuBar);
 
         returnMenuBar.setText("Return");
@@ -346,6 +353,26 @@ public class PurchasingSaleStorageManagement extends javax.swing.JFrame {
         
         RebuildProductProperties.rebuildProductProperties(AddProductInformation.ProductData);
     }//GEN-LAST:event_StockResetValueButtonActionPerformed
+
+    private void helpMenuBarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpMenuBarMouseClicked
+        // TODO add your handling code here:
+        // GPT's method to make the link clickable
+        String url = "https://github.com/San1tater1122/ICS4U_Easy-Resources-Plan";
+
+        JLabel link = new JLabel("<html>Go to our Github to see the tutorial! :)<br>"
+                + "<a href=''>" + url + "</a></html>");
+
+        link.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent e) {
+                try {
+                    Desktop.getDesktop().browse(new java.net.URI(url));
+                } catch (Exception ex) {}
+            }
+        });
+
+        JOptionPane.showMessageDialog(null, link, "Tutorial", JOptionPane.INFORMATION_MESSAGE);
+    }//GEN-LAST:event_helpMenuBarMouseClicked
 
     /**
      * @param args the command line arguments

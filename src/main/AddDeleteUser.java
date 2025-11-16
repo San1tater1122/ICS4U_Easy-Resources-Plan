@@ -3,11 +3,14 @@ package main;
 
 import dataAnalyze.AddNewUserToProperties;
 import dataAnalyze.UserPropertiesFileParsing;
+import java.awt.Cursor;
+import java.awt.Desktop;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Properties;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import model.User;
@@ -72,8 +75,7 @@ public class AddDeleteUser extends javax.swing.JFrame {
         returnMainMenuBar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Easy Resource Plan Alpha 1.1");
-        setMaximumSize(new java.awt.Dimension(800, 600));
+        setTitle("Easy Resource Plan Alpha 1.2");
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -144,6 +146,11 @@ public class AddDeleteUser extends javax.swing.JFrame {
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 70, -1));
 
         helpMenuBar.setText("Help");
+        helpMenuBar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                helpMenuBarMouseClicked(evt);
+            }
+        });
         jMenuBar1.add(helpMenuBar);
 
         returnMenuBar.setText("Return");
@@ -179,14 +186,25 @@ public class AddDeleteUser extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) UserTable.getModel();
         String Username = UserNameTextBox.getText();
         String Password = PasswordTextBox.getText();
+        
+        if(Username.isEmpty() || Password.isEmpty()){
+            JOptionPane.showMessageDialog(this, "You can't have empty Username or Password!");
+            return;
+        }
+        
         Short id = 0;
         String Position;
         
         for (int i = 0; i < model.getRowCount(); i++) {
             Object value = model.getValueAt(i, 0);
+            Object user = model.getValueAt(i, 1);
             if (value == null) continue;
             
             short existingId = (short) model.getValueAt(i, 0); // 第0列是ID
+            if(user.equals(Username)){
+                JOptionPane.showMessageDialog(this, "Username already exist!");
+                return;
+            }
             
             if (existingId == id) {
                 id = (short)(id+1);
@@ -254,6 +272,27 @@ public class AddDeleteUser extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "You have NO permission to delete User!");
         }  
     }//GEN-LAST:event_RemoveUserButtonActionPerformed
+
+    private void helpMenuBarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_helpMenuBarMouseClicked
+        // TODO add your handling code here:
+        // GPT's method to make the link clickable
+        String url = "https://github.com/San1tater1122/ICS4U_Easy-Resources-Plan";
+
+        JLabel link = new JLabel("<html>Go to our Github to see the tutorial! :)<br>"
+                + "<a href=''>" + url + "</a></html>");
+
+        link.addMouseListener(new java.awt.event.MouseAdapter() {
+            @Override
+            public void mouseClicked(java.awt.event.MouseEvent e) {
+                try {
+                    Desktop.getDesktop().browse(new java.net.URI(url));
+                } catch (Exception ex) {}
+            }
+        });
+
+        JOptionPane.showMessageDialog(null, link, "Tutorial", JOptionPane.INFORMATION_MESSAGE);
+
+    }//GEN-LAST:event_helpMenuBarMouseClicked
 
     /**
      * @param args the command line arguments
