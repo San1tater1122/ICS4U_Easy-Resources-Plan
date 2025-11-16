@@ -7,6 +7,13 @@ Template:
 * Completion Status: (Completed, In Progress, Planned) | (Tested)
 * Notes: (Optional) Problems encountered, solutions, or follow-up work.
 ---
+### [Nov 16, 2025] Add delete User UI and Function and debug 
+* Changed By: Jinghao
+* Function Description: As the title said
+* Files Involved: AddRemoveUser.java
+* Completion Status: Completed | Tested
+  
+---
 ### [Nov 10, 2025] Merge, delete, and modify Product functions, A sort function has been added to the table.
 * Changed By: Jinghao
 * Function Description: As the title said
