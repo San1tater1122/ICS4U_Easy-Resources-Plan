@@ -16,12 +16,6 @@
 * Inventory Management
   * Inbound inventory management: Increase inventory levels.
   * Outbound inventory management: Reduce inventory levels.
-  * Return/damage handling: Adjust inventory for expired, damaged, or customer-returned items.
-  * Inventory counting: Supports inventory verification and statistics.
-* Query and Reporting
-  * Product information query (by number, name, or category).
-  * Inventory alerts (remind you to restock when stock falls below the safety level).
-  * Generate inventory and sales reports to assist with supermarket operations analysis.
 * User Permissions
   * Administrator: Full access to product and inventory.
-  * Employee: Limited to recording sales and querying inventory.
+  * Employee: Can not add or remove any user.
