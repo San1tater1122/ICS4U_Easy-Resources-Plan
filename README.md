@@ -12,7 +12,9 @@
 * Easy Resources Plan is a script based program about supermarket inventory management. It can be used as a system to record and manage supermarket product information.
 ## Features Plan To Inclueded (Please see Newest Releases for details.): 
 * Product Management
-  * Add, delete, and modify product information (such as id, name, price, category, suppliers.).
+  * Add product information (id, name, price, category, suppliers.).
+  * delete product.
+  * modify product information (id, name, price, category, suppliers.).
 * Inventory Management
   * Inbound inventory management: Increase inventory levels.
   * Outbound inventory management: Reduce inventory levels.
