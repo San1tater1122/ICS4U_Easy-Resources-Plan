@@ -78,7 +78,7 @@ public class AddProductInformation extends javax.swing.JFrame {
         returnToMainMenuBar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Easy Resource Plan Alpha 1.2");
+        setTitle("Easy Resource Plan Beta 1.0");
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

@@ -35,6 +35,15 @@ public class MainMenuUI extends javax.swing.JFrame {
         Image scaledImage2 = originalIcon2.getImage().getScaledInstance(75, 75, Image.SCALE_SMOOTH);
         removeProductInformationIcon.setIcon(new ImageIcon(scaledImage2));
         
+        //fix
+        ImageIcon originalIcon3 = new ImageIcon(getClass().getResource("/IconImage/fix.png"));
+        Image scaledImage3 = originalIcon3.getImage().getScaledInstance(75, 75, Image.SCALE_SMOOTH);
+        PSSMIcon.setIcon(new ImageIcon(scaledImage3));
+        
+        //user
+        ImageIcon originalIcon4 = new ImageIcon(getClass().getResource("/IconImage/user.png"));
+        Image scaledImage4 = originalIcon4.getImage().getScaledInstance(75, 75, Image.SCALE_SMOOTH);
+        addDeleteUserIcon.setIcon(new ImageIcon(scaledImage4));
     }
 
     /**
@@ -50,16 +59,17 @@ public class MainMenuUI extends javax.swing.JFrame {
         removeProductInformationIcon = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton4 = new javax.swing.JButton();
+        addDeleteUserIcon = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        jButton3 = new javax.swing.JButton();
+        PSSMIcon = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         HelpButton = new javax.swing.JMenu();
         logoutMenuBar = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Easy Resource Plan Alpha 1.2");
+        setTitle("Easy Resource Plan Beta 1.0");
+        setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -99,13 +109,12 @@ public class MainMenuUI extends javax.swing.JFrame {
         jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 78, -1));
 
-        jButton4.setText("jButton4");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        addDeleteUserIcon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                addDeleteUserIconActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, -1, 76));
+        getContentPane().add(addDeleteUserIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, -1, 76));
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("<html><body style='width: 50px'>Purchasing Sale Storage Management</body></html>");
@@ -115,13 +124,12 @@ public class MainMenuUI extends javax.swing.JFrame {
         jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 78, -1));
 
-        jButton3.setText("jButton3");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        PSSMIcon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                PSSMIconActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, -1, 76));
+        getContentPane().add(PSSMIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, -1, 76));
 
         jLabel3.setText("<html><body style='width: 75px'>Add / Delete User</body></html>");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, 80, 40));
@@ -159,11 +167,11 @@ public class MainMenuUI extends javax.swing.JFrame {
         new AddProductInformation().setVisible(true);
     }//GEN-LAST:event_addProductInformationIconActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void addDeleteUserIconActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addDeleteUserIconActionPerformed
         // TODO add your handling code here:
         setVisible(false);
         new AddDeleteUser().setVisible(true);
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_addDeleteUserIconActionPerformed
 
     private void logoutMenuBarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logoutMenuBarActionPerformed
         // TODO add your handling code here:
@@ -181,11 +189,11 @@ public class MainMenuUI extends javax.swing.JFrame {
         new RemoveAndModifyProductInformation().setVisible(true);
     }//GEN-LAST:event_removeProductInformationIconActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void PSSMIconActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PSSMIconActionPerformed
         // TODO add your handling code here:
         setVisible(false);
         new PurchasingSaleStorageManagement().setVisible(true);
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_PSSMIconActionPerformed
 
     private void HelpButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HelpButtonMouseClicked
         // TODO add your handling code here:
@@ -234,9 +242,9 @@ public class MainMenuUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu HelpButton;
+    private javax.swing.JButton PSSMIcon;
+    private javax.swing.JButton addDeleteUserIcon;
     private javax.swing.JButton addProductInformationIcon;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
