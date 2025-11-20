@@ -8,7 +8,7 @@ Template:
 * Notes: (Optional) Problems encountered, solutions, or follow-up work.
 
 ---
-### [Nov 16, 2025] Add the search function if the product and a simple reporting of the product that stock <= 50.
+### [Nov 19, 2025] Add the search function if the product and a simple reporting of the product that stock <= 50.
 * Changed By: Jinghao
 * Function Description: As the title said
 * Files Involved: ProductSearch.java
