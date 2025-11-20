@@ -24,54 +24,61 @@
   * Employee: Can not add or remove any user.
 
 ---
-## How to Use it?
-### first it is the login page!
+## Tutorial
+### This is the page you will see when you launch the software. 
 <img width="802" height="598" alt="截屏2025-11-19 20 52 25" src="https://github.com/user-attachments/assets/c306a8ce-ffa4-4090-8874-bb95d7757c04" />  
   
-* There is some available User name and password (You can add or delete those in Add/Remove User page):
+* If you open the software for the first time, you could have several of preset user name and password. 
 * Username: Victor Passowrd: admin456     Username: Bianca Passowrd: admin789       Username: Guest Passowrd: guest123
+* You can add or delete users data later in the software:
+* (MN's roast: All passwords are storaged as plain text in EasyResourcePlan\data\users.properties. Not sure whether it is safe or dangerous...)
 
 ---
-### Now it is the main menu
+### You can see our main menu after login: 
 <img width="800" height="602" alt="截屏2025-11-19 20 56 07" src="https://github.com/user-attachments/assets/65a76324-6785-44f3-8270-767d075f862d" />
   
-* Click the logout button will let you return to the login page
-* Click the help button will generate a link and you can click it to see our Github!
-* And you can click each function icon to go to each function
+* Click the "Logout" button to return to the login page;
+* The "Help" button help you to read our help document in GitHub (Yes this document(*^▽^*));
+* Click function icons to start your work.
 
 ---
 ### Add Product Infomation
 <img width="800" height="630" alt="截屏2025-11-19 20 59 29" src="https://github.com/user-attachments/assets/3c0da0c4-38ec-4e7c-bec8-fc6832f8ad68" />
   
-* Write new product in the text box and click Add Product to generate a new type of product
-* Sort Button to Sort then click the title of each category to sort
+* Write the name of new products in the text box and click "Add Product" to add a new type of product
+* Click "Sort" and choose each category to sort for different labels. 
 
 ---
 ### Remove & Modify Product Information
 <img width="805" height="631" alt="截屏2025-11-19 21 02 48" src="https://github.com/user-attachments/assets/f7884e47-8252-4d64-b344-91f9d2f9ec08" />
   
-* When your mouse click one of the Product and then press Remove, the product that been select will be remove
-* When you modify the infomation of the product (Product Name, Price, Category are avaliable), and then click save, the infomation will be saved and renew.
+* Pick a product then click "Remove", the product will be removed; 
+* When you modify the infomation of the product (Product Name, Price and Category are avaliable), change and click "Save", the infomation will be saved and renew.
 
 ---
 ### Purchasing Sale Storage Management
 <img width="798" height="625" alt="截屏2025-11-19 21 05 50" src="https://github.com/user-attachments/assets/d64aa342-0ef6-4087-b7b9-acb28cdebb39" />
   
-* When your mouse click one of the Product and write number in the text box,
-* you can press the add stock button to increase the product's stock you selected
-* you can press the decrease stock button to decrease the product's stock you selected
-* you can press the stock reset button to reset the number of stock of the product's stock you selected
+* Click one of the Product and write number in the text box, and: 
+* - press the "Add Stock" to increase the product's stock you selected;
+* - press the "Decrease Stock" to decrease the product's stock you selected;
+* - press the “Stock Reset” to completely restart the number of stock of the product's stock you selected.
 
 ---
-### Search Product Info
+### Search Product Information
 <img width="799" height="632" alt="截屏2025-11-19 21 08 04" src="https://github.com/user-attachments/assets/6c4dc61f-3dbe-4dd1-9db1-e028a16e4a01" />
   
-* Type the infomation in the text box and then press by name/ID/category to find the matching product
-* Low Stock Button will shows you all the product that has a stock that lower or equal to 50
+* Input the infomation in the text box and choose name/ID/category to find the matching product;
+* "Low Stock" button will shows you all the product that has a stock that lower or equal to 50.
 
 ---
 ### Add/Delete User
 <img width="804" height="620" alt="截屏2025-11-19 21 10 58" src="https://github.com/user-attachments/assets/5cf3d276-e016-4333-b631-c66cd8dc4fab" />
   
-* Write new user (Name and Password) in the text box and choose if it is an admin or not and then press Add button to generate a user account
-* select the user in the list and the press remove to remove the user's account
+* Input informations (Name and Password) of the new user in the text box and choose if it is an admin or not, click "Add" button to add a user account. 
+* Select the user in the list and the click "Remove" to remove an account.
+
+---
+Finally we wish you a pleasant experience with our product.
+ERPGrmi Team is dedicated to serving you. 
+
