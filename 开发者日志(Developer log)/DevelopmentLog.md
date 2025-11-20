@@ -6,6 +6,14 @@ Template:
 * Files Involved: filename1.java, filename2.md
 * Completion Status: (Completed, In Progress, Planned) | (Tested)
 * Notes: (Optional) Problems encountered, solutions, or follow-up work.
+
+---
+### [Nov 16, 2025] Add the search function if the product and a simple reporting of the product that stock <= 50.
+* Changed By: Jinghao
+* Function Description: As the title said
+* Files Involved: ProductSearch.java
+* Completion Status: Completed | Tested
+
 ---
 ### [Nov 16, 2025] Add delete User UI and Function and debug 
 * Changed By: Jinghao
