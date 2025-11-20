@@ -44,6 +44,11 @@ public class MainMenuUI extends javax.swing.JFrame {
         ImageIcon originalIcon4 = new ImageIcon(getClass().getResource("/IconImage/user.png"));
         Image scaledImage4 = originalIcon4.getImage().getScaledInstance(75, 75, Image.SCALE_SMOOTH);
         addDeleteUserIcon.setIcon(new ImageIcon(scaledImage4));
+        
+        //Search
+        ImageIcon originalIcon5 = new ImageIcon(getClass().getResource("/IconImage/FDJ.jpg"));
+        Image scaledImage5 = originalIcon5.getImage().getScaledInstance(75, 75, Image.SCALE_SMOOTH);
+        SearchProductIcon.setIcon(new ImageIcon(scaledImage5));
     }
 
     /**
@@ -61,14 +66,16 @@ public class MainMenuUI extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         addDeleteUserIcon = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
-        PSSMIcon = new javax.swing.JButton();
+        SearchProductIcon = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        PSSMIcon = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         HelpButton = new javax.swing.JMenu();
         logoutMenuBar = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Easy Resource Plan Beta 1.0");
+        setTitle("Easy Resource Plan Beta 1.1");
         setMaximumSize(new java.awt.Dimension(800, 600));
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -109,12 +116,15 @@ public class MainMenuUI extends javax.swing.JFrame {
         jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 140, 78, -1));
 
+        addDeleteUserIcon.setMaximumSize(new java.awt.Dimension(75, 75));
+        addDeleteUserIcon.setMinimumSize(new java.awt.Dimension(75, 75));
+        addDeleteUserIcon.setPreferredSize(new java.awt.Dimension(75, 75));
         addDeleteUserIcon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 addDeleteUserIconActionPerformed(evt);
             }
         });
-        getContentPane().add(addDeleteUserIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, -1, 76));
+        getContentPane().add(addDeleteUserIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 60, -1, 75));
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("<html><body style='width: 50px'>Purchasing Sale Storage Management</body></html>");
@@ -124,15 +134,32 @@ public class MainMenuUI extends javax.swing.JFrame {
         jLabel4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 140, 78, -1));
 
+        SearchProductIcon.setMaximumSize(new java.awt.Dimension(75, 75));
+        SearchProductIcon.setMinimumSize(new java.awt.Dimension(75, 75));
+        SearchProductIcon.setPreferredSize(new java.awt.Dimension(75, 75));
+        SearchProductIcon.setSize(new java.awt.Dimension(75, 75));
+        SearchProductIcon.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SearchProductIconActionPerformed(evt);
+            }
+        });
+        getContentPane().add(SearchProductIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 60, -1, 75));
+
+        jLabel3.setText("<html><body style='width: 50px'>Search Product Info</body></html>");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 150, 80, -1));
+
+        PSSMIcon.setMaximumSize(new java.awt.Dimension(75, 75));
+        PSSMIcon.setMinimumSize(new java.awt.Dimension(75, 75));
+        PSSMIcon.setPreferredSize(new java.awt.Dimension(75, 75));
         PSSMIcon.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PSSMIconActionPerformed(evt);
             }
         });
-        getContentPane().add(PSSMIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, -1, 76));
+        getContentPane().add(PSSMIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 60, -1, 75));
 
-        jLabel3.setText("<html><body style='width: 75px'>Add / Delete User</body></html>");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 140, 80, 40));
+        jLabel5.setText("<html><body style='width: 75px'>Add / Delete User</body></html>");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 140, 80, 40));
 
         HelpButton.setText("Help");
         HelpButton.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -189,11 +216,11 @@ public class MainMenuUI extends javax.swing.JFrame {
         new RemoveAndModifyProductInformation().setVisible(true);
     }//GEN-LAST:event_removeProductInformationIconActionPerformed
 
-    private void PSSMIconActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PSSMIconActionPerformed
+    private void SearchProductIconActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SearchProductIconActionPerformed
         // TODO add your handling code here:
         setVisible(false);
-        new PurchasingSaleStorageManagement().setVisible(true);
-    }//GEN-LAST:event_PSSMIconActionPerformed
+        new ProductSearch().setVisible(true);
+    }//GEN-LAST:event_SearchProductIconActionPerformed
 
     private void HelpButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HelpButtonMouseClicked
         // TODO add your handling code here:
@@ -214,6 +241,12 @@ public class MainMenuUI extends javax.swing.JFrame {
 
         JOptionPane.showMessageDialog(null, link, "Tutorial", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_HelpButtonMouseClicked
+
+    private void PSSMIconActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PSSMIconActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+        new PurchasingSaleStorageManagement().setVisible(true);
+    }//GEN-LAST:event_PSSMIconActionPerformed
 
     /**
      * @param args the command line arguments
@@ -243,12 +276,14 @@ public class MainMenuUI extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu HelpButton;
     private javax.swing.JButton PSSMIcon;
+    private javax.swing.JButton SearchProductIcon;
     private javax.swing.JButton addDeleteUserIcon;
     private javax.swing.JButton addProductInformationIcon;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu logoutMenuBar;
     private javax.swing.JButton removeProductInformationIcon;

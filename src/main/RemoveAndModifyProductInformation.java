@@ -70,7 +70,7 @@ public class RemoveAndModifyProductInformation extends javax.swing.JFrame {
         returnMainMenuBar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Easy Resource Plan Beta 1.0");
+        setTitle("Easy Resource Plan Beta 1.1");
         setMinimumSize(new java.awt.Dimension(800, 600));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

@@ -3,7 +3,7 @@
 <Form version="1.9" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="title" type="java.lang.String" value="Easy Resource Plan Beta 1.0"/>
+    <Property name="title" type="java.lang.String" value="Easy Resource Plan Beta 1.1"/>
     <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
       <Color id="&#x9ed8;&#x8ba4;&#x5149;&#x6807;"/>
     </Property>
