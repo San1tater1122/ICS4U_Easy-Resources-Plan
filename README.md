@@ -5,8 +5,9 @@
 ---
 ### Developers please read the Developer Guidelines first: [Developer Guidelines Link](https://github.com/San1tater1122/ICS4U_Easy-Resources-Plan/blob/main/%E5%BC%80%E5%8F%91%E8%80%85%E9%A1%BB%E7%9F%A5%20(Notes%20for%20developers).md)  
 #### [Requirement Log: Log of all cooperation requests](https://github.com/San1tater1122/ICS4U_Easy-Resources-Plan/blob/main/%E5%BC%80%E5%8F%91%E8%80%85%E6%97%A5%E5%BF%97(Developer%20log)/Requirements-Log.md)
+#### [Canvas Preyzentayshon](https://www.canva.com/design/DAG4-BCJXJg/I4i9PWjWuolivDkuHlkDdQ/edit
 
----
+---)
 
 ## Project Selection: Supermarket Inventory
 * Easy Resources Plan is a script based program about supermarket inventory management. It can be used as a system to record and manage supermarket product information.
