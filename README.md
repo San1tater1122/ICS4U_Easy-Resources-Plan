@@ -1,4 +1,4 @@
-<h1 align="center"> ICS4U_Management_System_Project </h1>
+<h1 align="center"> Management_System_Project </h1>
 <h3 align="center"> Software Name: Easy Resources Plan </h3>
 <h3 align="center"> Created by: San1tater1122 and MicroNeutron </h3>
 
